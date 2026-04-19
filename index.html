@@ -1,176 +1,483 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Utku Karaca | Software Engineer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
-        body { font-family: 'Manrope', sans-serif; }
-        h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.02em; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Utku Karaca | Software Developer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+    body { font-family: 'Manrope', sans-serif; }
+    h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.02em; }
+    html { scroll-behavior: smooth; }
+  </style>
 </head>
 <body class="bg-slate-950 text-slate-100">
-    <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
-        <div class="absolute -top-24 -left-24 h-80 w-80 rounded-full bg-cyan-500/20 blur-3xl"></div>
-        <div class="absolute top-1/3 -right-24 h-80 w-80 rounded-full bg-sky-500/20 blur-3xl"></div>
-        <div class="absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-indigo-500/10 blur-3xl"></div>
-    </div>
 
-    <nav class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex h-16 items-center justify-between">
-                <a href="index.html" class="text-lg font-semibold tracking-tight text-white">Utku Karaca</a>
-                <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-                    <a href="index.html" class="text-white">Home</a>
-                    <a href="advanced-reports.html" class="hover:text-white transition">Advanced Reports</a>
-                    <a href="project_y.html" class="hover:text-white transition">Database Report Studio</a>
-                    <a href="project_x.html" class="hover:text-white transition">Marketplace Operations Hub</a>
-                </div>
-            </div>
+  <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
+    <div class="absolute -top-32 -left-32 h-[500px] w-[500px] rounded-full bg-cyan-500/10 blur-3xl"></div>
+    <div class="absolute top-1/3 -right-32 h-96 w-96 rounded-full bg-sky-500/10 blur-3xl"></div>
+    <div class="absolute bottom-1/4 left-1/3 h-80 w-80 rounded-full bg-indigo-500/8 blur-3xl"></div>
+  </div>
+
+  <!-- NAV -->
+  <nav class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex h-16 items-center justify-between">
+        <a href="index.html" class="text-lg font-semibold tracking-tight text-white">Utku Karaca</a>
+        <div class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+          <a href="#about"      class="hover:text-white transition">About</a>
+          <a href="#experience" class="hover:text-white transition">Experience</a>
+          <a href="#projects"   class="hover:text-white transition">Projects</a>
+          <a href="#education"  class="hover:text-white transition">Education</a>
+          <a href="#contact"    class="hover:text-white transition">Contact</a>
+          <a href="UtkuKaraca_sresume.pdf" target="_blank" rel="noopener"
+             class="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-1.5 text-cyan-200 hover:bg-cyan-400/20 transition">Resume ↗</a>
         </div>
-    </nav>
+        <button class="md:hidden text-slate-300 hover:text-white" onclick="document.getElementById('mob').classList.toggle('hidden')">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+      <div id="mob" class="hidden pb-4 flex flex-col gap-3 text-sm font-medium text-slate-300">
+        <a href="#about"      class="hover:text-white transition">About</a>
+        <a href="#experience" class="hover:text-white transition">Experience</a>
+        <a href="#projects"   class="hover:text-white transition">Projects</a>
+        <a href="#education"  class="hover:text-white transition">Education</a>
+        <a href="#contact"    class="hover:text-white transition">Contact</a>
+        <a href="UtkuKaraca_sresume.pdf" target="_blank" rel="noopener" class="text-cyan-200">Resume ↗</a>
+      </div>
+    </div>
+  </nav>
 
-    <main class="max-w-7xl mx-auto px-6 py-16 lg:py-24">
-        <section class="grid gap-12 lg:grid-cols-[1.25fr_0.75fr] lg:items-center">
-            <div>
-                <span class="inline-flex items-center rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-200">
-                    Enterprise software portfolio
-                </span>
-                <h1 class="mt-6 max-w-3xl text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
-                    Software that turns complex workflows into clear, usable products.
-                </h1>
-                <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-                    Reporting platforms, marketplace operations, and cross-platform tools designed to look credible in front of clients, hiring managers, and internal stakeholders.
-                </p>
-                <div class="mt-8 flex flex-wrap gap-3">
-                    <a href="#selected-work" class="rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-200">View selected work</a>
-                    <a href="advanced-reports.html" class="rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10">Open case studies</a>
-                </div>
-            </div>
+  <main class="max-w-7xl mx-auto px-6">
 
-            <div class="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl shadow-black/20 backdrop-blur">
-                <div class="grid gap-4 sm:grid-cols-2">
-                    <div class="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
-                        <p class="text-sm uppercase tracking-[0.2em] text-slate-400">Focus</p>
-                        <p class="mt-2 text-lg font-semibold text-white">Business software</p>
-                        <p class="mt-2 text-sm leading-6 text-slate-300">Interfaces and systems that make reporting, operations, and decisions easier to manage.</p>
-                    </div>
-                    <div class="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
-                        <p class="text-sm uppercase tracking-[0.2em] text-slate-400">Delivery</p>
-                        <p class="mt-2 text-lg font-semibold text-white">Frontend + backend</p>
-                        <p class="mt-2 text-sm leading-6 text-slate-300">Angular, Python, Electron, Ionic, and marketplace integrations in one portfolio.</p>
-                    </div>
-                    <div class="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
-                        <p class="text-sm uppercase tracking-[0.2em] text-slate-400">Outcome</p>
-                        <p class="mt-2 text-lg font-semibold text-white">Clearer workflows</p>
-                        <p class="mt-2 text-sm leading-6 text-slate-300">Each project removes manual effort and gives teams a single place to work.</p>
-                    </div>
-                    <div class="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
-                        <p class="text-sm uppercase tracking-[0.2em] text-slate-400">Style</p>
-                        <p class="mt-2 text-lg font-semibold text-white">Portfolio-ready</p>
-                        <p class="mt-2 text-sm leading-6 text-slate-300">A clean presentation that helps employers quickly understand the product and the stack.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- HERO -->
+    <section class="py-24 lg:py-32 grid gap-12 lg:grid-cols-[1.25fr_0.75fr] lg:items-center">
+      <div>
+        <span class="inline-flex items-center rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-200 mb-6">
+          Open to new opportunities · Bratislava, Slovakia
+        </span>
+        <h1 class="text-5xl font-extrabold tracking-tight text-white sm:text-6xl lg:text-7xl leading-none">
+          Utku<br>
+          <span class="bg-gradient-to-r from-cyan-400 to-sky-500 bg-clip-text text-transparent">Karaca</span>
+        </h1>
+        <p class="mt-5 text-xl font-semibold text-slate-300">Software Developer · Siemens Grid Software</p>
+        <p class="mt-5 max-w-2xl text-base leading-8 text-slate-400">
+          Backend systems engineer and SCADA platform developer with 3+ years at Siemens. I build integration bridges, reporting tools, and distributed infrastructure that power mission-critical operational environments. Currently pursuing an M.Sc. researching distributed algorithms in lossy networks.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#projects" class="rounded-full bg-cyan-500 px-6 py-3 text-sm font-bold text-slate-950 transition hover:bg-cyan-400 shadow-lg shadow-cyan-500/20">View Projects</a>
+          <a href="#contact"  class="rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10">Contact Me</a>
+          <a href="UtkuKaraca_sresume.pdf" target="_blank" rel="noopener" class="rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10">Download CV ↗</a>
+        </div>
+        <div class="mt-8 flex flex-wrap gap-2">
+          <a href="https://github.com/ankokkk" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-300 hover:border-white/30 hover:text-white transition">
+            <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
+            GitHub
+          </a>
+          <a href="https://tryhackme.com/p/ankok" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 rounded-full border border-red-500/25 bg-red-500/10 px-4 py-2 text-sm text-red-300 hover:border-red-400/50 transition">🎯 TryHackMe</a>
+          <a href="https://leetcode.com/u/ankok/" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 rounded-full border border-yellow-500/25 bg-yellow-500/10 px-4 py-2 text-sm text-yellow-300 hover:border-yellow-400/50 transition">⚡ LeetCode</a>
+          <a href="https://www.hackerrank.com/profile/Ankok" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-4 py-2 text-sm text-emerald-300 hover:border-emerald-400/50 transition">✦ HackerRank</a>
+        </div>
+      </div>
+      <!-- Stats card -->
+      <div class="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl shadow-black/30 backdrop-blur">
+        <p class="text-xs uppercase tracking-[0.25em] text-slate-400 mb-5">At a glance</p>
+        <div class="grid grid-cols-2 gap-3">
+          <div class="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+            <p class="text-3xl font-bold text-white">3+</p>
+            <p class="text-xs text-slate-400 mt-1">Years at Siemens</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+            <p class="text-3xl font-bold text-white">20yr</p>
+            <p class="text-xs text-slate-400 mt-1">Data migrated (SP4→SP7)</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+            <p class="text-3xl font-bold text-white">6+</p>
+            <p class="text-xs text-slate-400 mt-1">SCADA integrations</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+            <p class="text-3xl font-bold text-white">67%</p>
+            <p class="text-xs text-slate-400 mt-1">Thesis peak speedup</p>
+          </div>
+        </div>
+        <div class="mt-4 rounded-2xl border border-white/10 bg-slate-900/70 p-4">
+          <p class="text-xs uppercase tracking-[0.2em] text-slate-400 mb-2">Stack</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="rounded-full bg-cyan-500/15 border border-cyan-500/20 px-2.5 py-0.5 text-xs text-cyan-300">Java</span>
+            <span class="rounded-full bg-cyan-500/15 border border-cyan-500/20 px-2.5 py-0.5 text-xs text-cyan-300">Python</span>
+            <span class="rounded-full bg-cyan-500/15 border border-cyan-500/20 px-2.5 py-0.5 text-xs text-cyan-300">Angular</span>
+            <span class="rounded-full bg-cyan-500/15 border border-cyan-500/20 px-2.5 py-0.5 text-xs text-cyan-300">Oracle DB</span>
+            <span class="rounded-full bg-cyan-500/15 border border-cyan-500/20 px-2.5 py-0.5 text-xs text-cyan-300">REST API</span>
+            <span class="rounded-full bg-cyan-500/15 border border-cyan-500/20 px-2.5 py-0.5 text-xs text-cyan-300">Docker</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <section class="mt-14 rounded-3xl border border-white/10 bg-slate-900/70 p-6 lg:p-8">
-            <div class="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
-                <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
-                    <p class="text-xs uppercase tracking-[0.2em] text-slate-400">Portfolio focus</p>
-                    <p class="mt-2 text-2xl font-bold text-white">3</p>
-                    <p class="mt-1 text-sm text-slate-300">Enterprise-grade products</p>
-                </div>
-                <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
-                    <p class="text-xs uppercase tracking-[0.2em] text-slate-400">Domains</p>
-                    <p class="mt-2 text-2xl font-bold text-white">Reporting + Ops</p>
-                    <p class="mt-1 text-sm text-slate-300">Data-heavy business workflows</p>
-                </div>
-                <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
-                    <p class="text-xs uppercase tracking-[0.2em] text-slate-400">Outputs</p>
-                    <p class="mt-2 text-2xl font-bold text-white">PDF / Excel</p>
-                    <p class="mt-1 text-sm text-slate-300">Operational and executive reporting</p>
-                </div>
-                <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
-                    <p class="text-xs uppercase tracking-[0.2em] text-slate-400">Platforms</p>
-                    <p class="mt-2 text-2xl font-bold text-white">Web + Desktop + Mobile</p>
-                    <p class="mt-1 text-sm text-slate-300">Unified architecture delivery</p>
-                </div>
-            </div>
-        </section>
+    <!-- ABOUT & SKILLS -->
+    <section id="about" class="py-20 border-t border-white/10">
+      <p class="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300 mb-2">About</p>
+      <h2 class="text-3xl font-bold tracking-tight text-white mb-6">Background &amp; skills</h2>
+      <p class="max-w-3xl text-slate-300 leading-8 mb-10">
+        I work in the <strong class="text-white">Stargate team</strong> at Siemens Grid Software, focused on building the interface layer that connects Siemens' core SCADA platform (Spectrum 7) with external systems — from REST API integration bridges to plugin-based communication protocols. My work spans both R&amp;D and project delivery, including custom feature implementation for production utility grid clients and large-scale data engineering.<br><br>
+        Outside Siemens, I'm completing my M.Sc. at Ege University where my research formally designs and validates a distributed protocol for accelerating classical algorithms over lossy networks. I also actively practice cybersecurity and algorithm design on TryHackMe and LeetCode.
+      </p>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <p class="text-xs uppercase tracking-[0.2em] text-cyan-300 mb-3">Languages</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Python</span>
+            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Java</span>
+            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">C / C++</span>
+            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">TypeScript</span>
+            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">SQL</span>
+            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Bash</span>
+          </div>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <p class="text-xs uppercase tracking-[0.2em] text-sky-300 mb-3">Backend &amp; Integration</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">REST API</span>
+            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Angular</span>
+            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Apache Tomcat</span>
+            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">JDBC</span>
+            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Docker</span>
+            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Linux</span>
+          </div>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <p class="text-xs uppercase tracking-[0.2em] text-indigo-300 mb-3">Databases</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Oracle</span>
+            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">PostgreSQL</span>
+            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">MS SQL Server</span>
+            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">SQLite</span>
+            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Schema Design</span>
+            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Query Optimization</span>
+          </div>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <p class="text-xs uppercase tracking-[0.2em] text-violet-300 mb-3">Specialisms</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">SCADA Systems</span>
+            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Distributed Systems</span>
+            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Plugin Architecture</span>
+            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Active Directory</span>
+            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">ML / DL</span>
+            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Cybersecurity</span>
+          </div>
+        </div>
+      </div>
+      <div class="mt-4 rounded-2xl border border-white/10 bg-white/5 p-5">
+        <p class="text-xs uppercase tracking-[0.2em] text-slate-400 mb-3">Tools &amp; Environments</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Git</span>
+          <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Docker</span>
+          <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Maven / Gradle</span>
+          <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">GDB / DBX</span>
+          <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Linux / Unix</span>
+          <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Multithreading / IPC</span>
+          <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Reverse Engineering</span>
+          <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Algorithm Design</span>
+        </div>
+      </div>
+      <div class="mt-5 flex flex-wrap gap-4">
+        <div class="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 flex items-center gap-3">
+          <span class="text-xl">🇬🇧</span>
+          <div><p class="text-sm font-semibold text-white">English</p><p class="text-xs text-slate-400">Professional working proficiency</p></div>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 flex items-center gap-3">
+          <span class="text-xl">🇩🇪</span>
+          <div><p class="text-sm font-semibold text-white">German</p><p class="text-xs text-slate-400">Basic</p></div>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 flex items-center gap-3">
+          <span class="text-xl">🇹🇷</span>
+          <div><p class="text-sm font-semibold text-white">Turkish</p><p class="text-xs text-slate-400">Native</p></div>
+        </div>
+      </div>
+    </section>
 
-        <section id="selected-work" class="mt-20">
-            <div class="flex items-end justify-between gap-4">
-                <div>
-                    <p class="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300">Selected work</p>
-                    <h2 class="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">Three case studies with different product shapes</h2>
-                </div>
-            </div>
+    <!-- EXPERIENCE -->
+    <section id="experience" class="py-20 border-t border-white/10">
+      <p class="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300 mb-2">Experience</p>
+      <h2 class="text-3xl font-bold tracking-tight text-white mb-10">Work history</h2>
 
-            <div class="mt-8 grid gap-6 lg:grid-cols-3">
-                <article class="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-xl shadow-black/10 backdrop-blur transition hover:-translate-y-1 hover:border-cyan-300/40">
-                    <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-200">Reporting platform</p>
-                    <h3 class="mt-4 text-2xl font-bold text-white">Advanced Reports Platform</h3>
-                    <p class="mt-4 text-sm leading-7 text-slate-300">Automates report generation, produces PDF and Excel outputs, and visualizes operational relationships with a clean front-end.</p>
-                    <div class="mt-6 flex flex-wrap gap-2 text-xs font-semibold">
-                        <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-cyan-200">Python</span>
-                        <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-cyan-200">Angular</span>
-                        <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-cyan-200">ReportLab</span>
-                    </div>
-                    <div class="mt-8 flex flex-wrap gap-6 items-center">
-                        <a href="advanced-reports.html" class="inline-flex items-center text-sm font-semibold text-white hover:text-cyan-200">Open case study <span class="ml-2">→</span></a>
-                        <a href="https://sqlkk.github.io/advanced_reports_stage" target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-bold text-cyan-200 transition hover:bg-cyan-400/20">Live Demo ↗</a>
-                    </div>
-                </article>
+      <!-- Siemens -->
+      <div class="rounded-3xl border border-white/10 bg-white/5 p-8 mb-6">
+        <div class="flex flex-wrap items-start justify-between gap-4 mb-6 pb-6 border-b border-white/10">
+          <div>
+            <h3 class="text-xl font-bold text-white">Software Developer</h3>
+            <p class="text-cyan-300 font-semibold mt-1">Siemens · Grid Software / SCADA</p>
+            <p class="text-slate-400 text-sm mt-1">February 2023 – Present · Bratislava, Slovakia</p>
+          </div>
+          <span class="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-bold text-cyan-200">Current</span>
+        </div>
+        <div class="grid gap-4 md:grid-cols-2">
+          <div class="rounded-2xl border border-sky-500/20 bg-sky-500/5 p-5">
+            <p class="text-xs uppercase tracking-[0.15em] text-sky-300 mb-2">R&amp;D · Stargate Team</p>
+            <h4 class="text-sm font-bold text-white mb-2">SP7 + Gridscale xNA Integration</h4>
+            <p class="text-slate-400 text-xs leading-6">Developed mission-critical integration bridges (SCS, CalVal, TNE, Alarm interfaces) enabling data transfer between Siemens Spectrum 7 and Gridscale xNA. Engineered REST API-based communication protocols transforming SP7 into a modular, plugin-ready ecosystem for bidirectional external data exchange with full validation and data-integrity guarantees.</p>
+            <div class="mt-3 flex flex-wrap gap-1.5">
+              <span class="rounded-full bg-sky-500/15 px-2.5 py-0.5 text-xs text-sky-300">Java</span>
+              <span class="rounded-full bg-sky-500/15 px-2.5 py-0.5 text-xs text-sky-300">REST API</span>
+              <span class="rounded-full bg-sky-500/15 px-2.5 py-0.5 text-xs text-sky-300">Plugin Architecture</span>
+            </div>
+          </div>
+          <div class="rounded-2xl border border-violet-500/20 bg-violet-500/5 p-5">
+            <p class="text-xs uppercase tracking-[0.15em] text-violet-300 mb-2">Full-Stack Product</p>
+            <h4 class="text-sm font-bold text-white mb-2">SP7 SCADA Reporting Tool</h4>
+            <p class="text-slate-400 text-xs leading-6">End-to-end reporting platform: Angular UI + Java backend on Apache Tomcat, JDBC connections to SP7 historical databases for large-scale dataset retrieval. AI-assisted telemetry imputation for missing data recovery. Active Directory authentication for enterprise-grade access control.</p>
+            <div class="mt-3 flex flex-wrap gap-1.5">
+              <span class="rounded-full bg-violet-500/15 px-2.5 py-0.5 text-xs text-violet-300">Angular</span>
+              <span class="rounded-full bg-violet-500/15 px-2.5 py-0.5 text-xs text-violet-300">Java</span>
+              <span class="rounded-full bg-violet-500/15 px-2.5 py-0.5 text-xs text-violet-300">Oracle</span>
+              <span class="rounded-full bg-violet-500/15 px-2.5 py-0.5 text-xs text-violet-300">Active Directory</span>
+            </div>
+          </div>
+          <div class="rounded-2xl border border-orange-500/20 bg-orange-500/5 p-5">
+            <p class="text-xs uppercase tracking-[0.15em] text-orange-300 mb-2">Systems Integration</p>
+            <h4 class="text-sm font-bold text-white mb-2">External Telemetry Injection &amp; Redundancy</h4>
+            <p class="text-slate-400 text-xs leading-6">Hybrid ingestion pipeline (PowerScript + Python) enabling clients to inject external telemetry into SCADA, simulating native RTU behavior. Automated redundancy mechanism continuously monitors data flow and retrieves missing values from external providers — zero data loss with rigorous validation against SCADA data models.</p>
+            <div class="mt-3 flex flex-wrap gap-1.5">
+              <span class="rounded-full bg-orange-500/15 px-2.5 py-0.5 text-xs text-orange-300">Python</span>
+              <span class="rounded-full bg-orange-500/15 px-2.5 py-0.5 text-xs text-orange-300">PowerScript</span>
+              <span class="rounded-full bg-orange-500/15 px-2.5 py-0.5 text-xs text-orange-300">HIS Database</span>
+            </div>
+          </div>
+          <div class="rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-5">
+            <p class="text-xs uppercase tracking-[0.15em] text-emerald-300 mb-2">Data Engineering</p>
+            <h4 class="text-sm font-bold text-white mb-2">SP4 → SP7 Legacy Data Migration</h4>
+            <p class="text-slate-400 text-xs leading-6">Fully automated migration of 20 years of historical operational data from legacy Spectrum 4 to modern SP7 within two months. Reverse-engineered Pascal code to build a custom export pipeline; built an automated import pipeline into SP7's Oracle HIS architecture. Preserved AGC production energy data with rigorous transformation logic.</p>
+            <div class="mt-3 flex flex-wrap gap-1.5">
+              <span class="rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-xs text-emerald-300">Python</span>
+              <span class="rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-xs text-emerald-300">Oracle</span>
+              <span class="rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-xs text-emerald-300">Data Pipeline</span>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4 rounded-2xl border border-white/10 bg-slate-900/60 p-5">
+          <p class="text-xs uppercase tracking-[0.15em] text-slate-400 mb-3">Also at Siemens</p>
+          <ul class="space-y-3 text-sm text-slate-300">
+            <li class="flex gap-3"><span class="text-cyan-500 mt-0.5 shrink-0">▸</span><span><strong class="text-white">Advanced SCADA Reporting &amp; Monitoring Platform</strong> — Real-time platform built from scratch with COM server integration, dual-database querying (HIS + OMS), interactive network map UI, and live alarm monitoring with indirect report generation from operational events.</span></li>
+            <li class="flex gap-3"><span class="text-cyan-500 mt-0.5 shrink-0">▸</span><span><strong class="text-white">SP7 Core SCADA Enhancements &amp; Production Engineering</strong> — Custom modifications to fundamental SP7 modules: database structures, multi-site configurations, list-display. Deep debugging and root-cause analysis across distributed production components.</span></li>
+          </ul>
+        </div>
+      </div>
 
-                <article class="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-xl shadow-black/10 backdrop-blur transition hover:-translate-y-1 hover:border-sky-300/40">
-                    <p class="text-sm font-semibold uppercase tracking-[0.2em] text-sky-200">Database tooling</p>
-                    <h3 class="mt-4 text-2xl font-bold text-white">Database Report Studio</h3>
-                    <p class="mt-4 text-sm leading-7 text-slate-300">A Jasper-style reporting tool for database teams that need schema exploration, query composition, and easy-to-share outputs.</p>
-                    <div class="mt-6 flex flex-wrap gap-2 text-xs font-semibold">
-                        <span class="rounded-full bg-sky-400/10 px-3 py-1 text-sky-200">Electron</span>
-                        <span class="rounded-full bg-sky-400/10 px-3 py-1 text-sky-200">Angular</span>
-                        <span class="rounded-full bg-sky-400/10 px-3 py-1 text-sky-200">Oracle SQL</span>
-                    </div>
-                    <div class="mt-8 flex flex-wrap gap-6 items-center">
-                        <a href="project_y.html" class="inline-flex items-center text-sm font-semibold text-white hover:text-sky-200">Open case study <span class="ml-2">→</span></a>
-                        <a href="https://sqlkk.github.io/project_y_stage" target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-full border border-sky-400/30 bg-sky-400/10 px-3 py-1 text-xs font-bold text-sky-200 transition hover:bg-sky-400/20">Live Demo ↗</a>
-                    </div>
-                </article>
+      <!-- Internships -->
+      <div class="grid gap-4 md:grid-cols-2">
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+          <p class="text-xs uppercase tracking-[0.15em] text-slate-400 mb-2">Internship</p>
+          <h3 class="text-base font-bold text-white">Siemens · Smart Grid &amp; SCADA</h3>
+          <p class="text-sm text-cyan-400 mt-0.5">Energy Systems Software Team</p>
+          <p class="text-sm text-slate-400 mt-1">Sep 2021 – Dec 2021</p>
+          <p class="mt-4 text-sm text-slate-300 leading-7">Supported development and testing for smart grid monitoring and SCADA software components. System analysis, debugging, and documentation of operational workflows.</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+          <p class="text-xs uppercase tracking-[0.15em] text-slate-400 mb-2">Research Internship</p>
+          <h3 class="text-base font-bold text-white">TOBB ETU · Research Project</h3>
+          <p class="text-sm text-slate-400 mt-1">Jan 2021 – Apr 2021</p>
+          <p class="mt-4 text-sm text-slate-300 leading-7">Developed machine learning models for data analysis and pattern recognition. Implemented deep learning approaches, evaluated model performance on experimental datasets.</p>
+        </div>
+      </div>
+    </section>
 
-                <article class="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-xl shadow-black/10 backdrop-blur transition hover:-translate-y-1 hover:border-emerald-300/40">
-                    <p class="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-200">Marketplace operations</p>
-                    <h3 class="mt-4 text-2xl font-bold text-white">Marketplace Operations Hub</h3>
-                    <p class="mt-4 text-sm leading-7 text-slate-300">A central workspace for Amazon, eBay, and similar channels to manage sales, advertising, products, and sync operations.</p>
-                    <div class="mt-6 flex flex-wrap gap-2 text-xs font-semibold">
-                        <span class="rounded-full bg-emerald-400/10 px-3 py-1 text-emerald-200">Angular</span>
-                        <span class="rounded-full bg-emerald-400/10 px-3 py-1 text-emerald-200">Ionic</span>
-                        <span class="rounded-full bg-emerald-400/10 px-3 py-1 text-emerald-200">Marketplace APIs</span>
-                    </div>
-                    <div class="mt-8 flex flex-wrap gap-6 items-center">
-                        <a href="project_x.html" class="inline-flex items-center text-sm font-semibold text-white hover:text-emerald-200">Open case study <span class="ml-2">→</span></a>
-                        <a href="https://sqlkk.github.io/project_x_stage" target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-xs font-bold text-emerald-200 transition hover:bg-emerald-400/20">Live Demo ↗</a>
-                    </div>
-                </article>
-            </div>
-        </section>
+    <!-- PROJECTS -->
+    <section id="projects" class="py-20 border-t border-white/10">
+      <p class="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300 mb-2">Projects &amp; Portfolio</p>
+      <h2 class="text-3xl font-bold tracking-tight text-white mb-10">Built &amp; shipped</h2>
+      <div class="grid gap-6 lg:grid-cols-2">
 
-        <section class="mt-20 grid gap-6 lg:grid-cols-3">
-            <div class="rounded-3xl border border-white/10 bg-slate-900/70 p-8">
-                <h3 class="text-xl font-semibold text-white">Business framing</h3>
-                <p class="mt-3 text-sm leading-7 text-slate-300">Each project is described in product language first, so a non-technical reviewer immediately understands the value.</p>
+        <!-- THESIS — highlight -->
+        <article class="lg:col-span-2 rounded-3xl border border-purple-500/25 bg-purple-500/5 p-8 shadow-xl transition hover:-translate-y-1 hover:border-purple-400/50">
+          <div class="flex flex-wrap items-start justify-between gap-6">
+            <div class="flex-1 min-w-0">
+              <span class="inline-flex items-center rounded-full border border-purple-400/30 bg-purple-400/10 px-3 py-1 text-xs font-bold text-purple-200">🎓 M.Sc. Thesis · In Progress</span>
+              <h3 class="mt-4 text-2xl font-bold text-white">Enhanced Twin Discovery Model (ETDM)</h3>
+              <p class="mt-3 max-w-3xl text-sm leading-7 text-slate-300">A distributed protocol that discovers hidden twin shortcuts at runtime to accelerate classical distributed algorithms over lossy networks — no prior knowledge required. Achieves up to <strong class="text-purple-200">67.4% faster convergence</strong> on ring topologies vs. classical baselines. Evaluated across 6 distributed problems. ~15,000 lines of Python with a deterministic BLAKE2b loss oracle for full reproducibility.</p>
+              <div class="mt-4 flex flex-wrap gap-2 text-xs">
+                <span class="rounded-full bg-purple-500/15 px-3 py-1 text-purple-200">Python</span>
+                <span class="rounded-full bg-purple-500/15 px-3 py-1 text-purple-200">Distributed Algorithms</span>
+                <span class="rounded-full bg-purple-500/15 px-3 py-1 text-purple-200">BLAKE2b Loss Oracle</span>
+                <span class="rounded-full bg-purple-500/15 px-3 py-1 text-purple-200">EWMA Scoring</span>
+                <span class="rounded-full bg-purple-500/15 px-3 py-1 text-purple-200">LaTeX / Formal Model</span>
+              </div>
+              <a href="thesis.html" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-purple-300 hover:text-white transition">View thesis page →</a>
             </div>
-            <div class="rounded-3xl border border-white/10 bg-slate-900/70 p-8">
-                <h3 class="text-xl font-semibold text-white">Technical credibility</h3>
-                <p class="mt-3 text-sm leading-7 text-slate-300">The stack, integrations, and outputs are shown clearly instead of hidden behind generic buzzwords.</p>
+            <div class="hidden lg:grid grid-cols-2 gap-3 shrink-0 w-56">
+              <div class="rounded-2xl border border-purple-500/20 bg-purple-500/10 p-4 text-center">
+                <p class="text-2xl font-bold text-purple-200">25.4%</p>
+                <p class="text-xs text-slate-400 mt-1">Avg. consensus speedup</p>
+              </div>
+              <div class="rounded-2xl border border-purple-500/20 bg-purple-500/10 p-4 text-center">
+                <p class="text-2xl font-bold text-purple-200">12.8%</p>
+                <p class="text-xs text-slate-400 mt-1">Leader election speedup</p>
+              </div>
+              <div class="col-span-2 rounded-2xl border border-purple-500/20 bg-purple-500/10 p-4 text-center">
+                <p class="text-2xl font-bold text-purple-200">67.4%</p>
+                <p class="text-xs text-slate-400 mt-1">Peak speedup (N=50, Ring)</p>
+              </div>
             </div>
-            <div class="rounded-3xl border border-white/10 bg-slate-900/70 p-8">
-                <h3 class="text-xl font-semibold text-white">Interview-ready</h3>
-                <p class="mt-3 text-sm leading-7 text-slate-300">This layout makes it easy to talk through problem, approach, implementation, and deliverables in an interview.</p>
-            </div>
-        </section>
-    </main>
+          </div>
+        </article>
+
+        <!-- Advanced Reports -->
+        <article class="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-xl transition hover:-translate-y-1 hover:border-cyan-300/40">
+          <span class="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200">Reporting platform</span>
+          <h3 class="mt-4 text-xl font-bold text-white">Advanced Reports Platform</h3>
+          <p class="mt-3 text-sm leading-7 text-slate-300">Automates report generation for operations teams. Produces branded PDF reports and structured Excel exports on demand, with background scheduling, visual network maps, and a clean Angular frontend backed by a Python engine.</p>
+          <div class="mt-4 flex flex-wrap gap-2 text-xs">
+            <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-cyan-200">Python</span>
+            <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-cyan-200">Angular</span>
+            <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-cyan-200">ReportLab</span>
+          </div>
+          <div class="mt-6 flex flex-wrap gap-5 items-center">
+            <a href="advanced-reports.html" class="text-sm font-semibold text-white hover:text-cyan-200 transition">Case study →</a>
+            <a href="https://sqlkk.github.io/advanced_reports_stage" target="_blank" rel="noopener"
+               class="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-bold text-cyan-200 hover:bg-cyan-400/20 transition">Live Demo ↗</a>
+          </div>
+        </article>
+
+        <!-- Database Report Studio -->
+        <article class="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-xl transition hover:-translate-y-1 hover:border-sky-300/40">
+          <span class="text-xs font-semibold uppercase tracking-[0.2em] text-sky-200">Desktop tooling</span>
+          <h3 class="mt-4 text-xl font-bold text-white">Database Report Studio</h3>
+          <p class="mt-3 text-sm leading-7 text-slate-300">Jasper-style desktop reporting tool for database teams. Schema exploration, query composition, and shareable PDF/Excel output. Cross-platform Electron app with Angular frontend and direct Oracle SQL connectivity.</p>
+          <div class="mt-4 flex flex-wrap gap-2 text-xs">
+            <span class="rounded-full bg-sky-400/10 px-3 py-1 text-sky-200">Electron</span>
+            <span class="rounded-full bg-sky-400/10 px-3 py-1 text-sky-200">Angular</span>
+            <span class="rounded-full bg-sky-400/10 px-3 py-1 text-sky-200">Oracle SQL</span>
+          </div>
+          <div class="mt-6 flex flex-wrap gap-5 items-center">
+            <a href="project_y.html" class="text-sm font-semibold text-white hover:text-sky-200 transition">Case study →</a>
+            <a href="https://sqlkk.github.io/project_y_stage" target="_blank" rel="noopener"
+               class="rounded-full border border-sky-400/30 bg-sky-400/10 px-3 py-1 text-xs font-bold text-sky-200 hover:bg-sky-400/20 transition">Live Demo ↗</a>
+          </div>
+        </article>
+
+        <!-- Marketplace Operations Hub -->
+        <article class="lg:col-span-2 rounded-3xl border border-white/10 bg-white/5 p-8 shadow-xl transition hover:-translate-y-1 hover:border-emerald-300/40">
+          <span class="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-200">Marketplace operations</span>
+          <h3 class="mt-4 text-xl font-bold text-white">Marketplace Operations Hub</h3>
+          <p class="mt-3 max-w-2xl text-sm leading-7 text-slate-300">Central workspace for Amazon, eBay, Walmart, and similar channels. Unified order tracking, campaign control, product management, and data sync across multiple marketplace APIs in one Angular + Ionic application.</p>
+          <div class="mt-4 flex flex-wrap gap-2 text-xs">
+            <span class="rounded-full bg-emerald-400/10 px-3 py-1 text-emerald-200">Angular</span>
+            <span class="rounded-full bg-emerald-400/10 px-3 py-1 text-emerald-200">Ionic</span>
+            <span class="rounded-full bg-emerald-400/10 px-3 py-1 text-emerald-200">Marketplace APIs</span>
+          </div>
+          <div class="mt-6 flex flex-wrap gap-5 items-center">
+            <a href="project_x.html" class="text-sm font-semibold text-white hover:text-emerald-200 transition">Case study →</a>
+            <a href="https://sqlkk.github.io/project_x_stage" target="_blank" rel="noopener"
+               class="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-xs font-bold text-emerald-200 hover:bg-emerald-400/20 transition">Live Demo ↗</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="py-20 border-t border-white/10">
+      <p class="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300 mb-2">Education</p>
+      <h2 class="text-3xl font-bold tracking-tight text-white mb-10">Academic background</h2>
+      <div class="grid gap-6 md:grid-cols-2">
+        <div class="rounded-3xl border border-purple-500/20 bg-purple-500/5 p-8">
+          <p class="text-xs uppercase tracking-[0.2em] text-purple-300 mb-2">2024 – 2026</p>
+          <h3 class="text-xl font-bold text-white">M.Sc. Computer Engineering</h3>
+          <p class="text-slate-200 mt-1 font-semibold">Ege University · International Computer Institute</p>
+          <p class="text-slate-400 text-sm mt-1">İzmir, Turkey</p>
+          <p class="mt-4 text-sm text-slate-300 leading-7">Research focus: Algorithm design and modeling in imperfect network environments; distributed systems coordination. Thesis: <span class="text-purple-200 font-medium">Enhanced Twin Discovery Model (ETDM)</span>.</p>
+          <a href="thesis.html" class="mt-4 inline-flex items-center text-sm font-semibold text-purple-300 hover:text-white transition">View thesis →</a>
+        </div>
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-8">
+          <p class="text-xs uppercase tracking-[0.2em] text-cyan-300 mb-2">2017 – 2022</p>
+          <h3 class="text-xl font-bold text-white">B.Sc. Electrical &amp; Electronics Engineering</h3>
+          <p class="text-slate-200 mt-1 font-semibold">TOBB University of Economics and Technology</p>
+          <p class="text-slate-400 text-sm mt-1">Ankara, Turkey</p>
+          <p class="mt-4 text-sm text-slate-300 leading-7">Foundational engineering programme covering electronics, signal processing, embedded systems, and computer science. Siemens Smart Grid &amp; SCADA internship and an ML research project during the final year.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLATFORMS -->
+    <section class="py-20 border-t border-white/10">
+      <p class="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300 mb-2">Platforms</p>
+      <h2 class="text-3xl font-bold tracking-tight text-white mb-4">Practice &amp; community</h2>
+      <p class="text-slate-400 text-sm mb-10 max-w-xl">Beyond daily work, I stay sharp on algorithms, cybersecurity, and programming challenges through these platforms.</p>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <a href="https://github.com/ankokkk" target="_blank" rel="noopener"
+           class="rounded-3xl border border-white/10 bg-white/5 p-6 hover:border-white/30 hover:-translate-y-1 transition">
+          <svg class="h-6 w-6 text-white mb-3" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
+          <p class="font-bold text-white">GitHub</p>
+          <p class="text-slate-400 text-sm mt-1">@ankokkk</p>
+          <p class="text-xs text-slate-500 mt-2">Source code and open contributions</p>
+        </a>
+        <a href="https://tryhackme.com/p/ankok" target="_blank" rel="noopener"
+           class="rounded-3xl border border-red-500/20 bg-red-500/5 p-6 hover:border-red-400/40 hover:-translate-y-1 transition">
+          <span class="text-2xl block mb-3">🎯</span>
+          <p class="font-bold text-white">TryHackMe</p>
+          <p class="text-slate-400 text-sm mt-1">@ankok</p>
+          <p class="text-xs text-slate-500 mt-2">Cybersecurity labs &amp; learning paths</p>
+        </a>
+        <a href="https://leetcode.com/u/ankok/" target="_blank" rel="noopener"
+           class="rounded-3xl border border-yellow-500/20 bg-yellow-500/5 p-6 hover:border-yellow-400/40 hover:-translate-y-1 transition">
+          <span class="text-2xl block mb-3">⚡</span>
+          <p class="font-bold text-white">LeetCode</p>
+          <p class="text-slate-400 text-sm mt-1">@ankok</p>
+          <p class="text-xs text-slate-500 mt-2">Algorithm &amp; data structure practice</p>
+        </a>
+        <a href="https://www.hackerrank.com/profile/Ankok" target="_blank" rel="noopener"
+           class="rounded-3xl border border-emerald-500/20 bg-emerald-500/5 p-6 hover:border-emerald-400/40 hover:-translate-y-1 transition">
+          <span class="text-2xl block mb-3">✦</span>
+          <p class="font-bold text-white">HackerRank</p>
+          <p class="text-slate-400 text-sm mt-1">@Ankok</p>
+          <p class="text-xs text-slate-500 mt-2">Programming challenges &amp; certifications</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-20 border-t border-white/10">
+      <p class="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300 mb-2">Contact</p>
+      <h2 class="text-3xl font-bold tracking-tight text-white mb-4">Get in touch</h2>
+      <p class="text-slate-400 max-w-xl mb-10">Open to backend engineering, SCADA / industrial software, and research-adjacent roles. Feel free to reach out directly.</p>
+      <div class="grid gap-4 md:grid-cols-3">
+        <a href="mailto:utku.karaca@siemens.com"
+           class="rounded-2xl border border-white/10 bg-white/5 p-6 hover:border-cyan-400/30 hover:-translate-y-0.5 transition">
+          <p class="text-xs uppercase tracking-[0.2em] text-slate-400 mb-2">Email</p>
+          <p class="text-sm font-semibold text-white">utku.karaca@siemens.com</p>
+        </a>
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+          <p class="text-xs uppercase tracking-[0.2em] text-slate-400 mb-2">Phone</p>
+          <p class="text-sm font-semibold text-white">+90 531 971 03 39</p>
+          <p class="text-xs text-slate-400 mt-1">+421 901 79 00 34 (SK)</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+          <p class="text-xs uppercase tracking-[0.2em] text-slate-400 mb-2">Location</p>
+          <p class="text-sm font-semibold text-white">Bratislava, Slovakia</p>
+          <p class="text-xs text-slate-400 mt-1">Also reachable in Turkey</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-white/10 py-10 text-center text-sm text-slate-500">
+    <div class="flex justify-center flex-wrap gap-6 mb-4">
+      <a href="https://github.com/ankokkk" target="_blank" rel="noopener" class="hover:text-white transition">GitHub</a>
+      <a href="https://tryhackme.com/p/ankok" target="_blank" rel="noopener" class="hover:text-white transition">TryHackMe</a>
+      <a href="https://leetcode.com/u/ankok/" target="_blank" rel="noopener" class="hover:text-white transition">LeetCode</a>
+      <a href="https://www.hackerrank.com/profile/Ankok" target="_blank" rel="noopener" class="hover:text-white transition">HackerRank</a>
+      <a href="thesis.html" class="hover:text-white transition">ETDM Thesis</a>
+    </div>
+    <p>Utku Karaca &nbsp;·&nbsp; Software Developer &nbsp;·&nbsp; Siemens Grid Software</p>
+  </footer>
+
 </body>
 </html>

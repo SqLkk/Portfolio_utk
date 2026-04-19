@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ETDM — Enhanced Twin Discovery Model | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <!-- KaTeX for math rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});"></script>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --bg-card: #161b22;
+      --bg-card-hover: #1c2331;
+      --border: #30363d;
+      --text: #e6edf3;
+      --text-muted: #8b949e;
+      --accent: #58a6ff;
+      --accent-green: #3fb950;
+      --accent-orange: #d29922;
+      --accent-red: #f85149;
+      --accent-purple: #bc8cff;
+      --gradient-start: #58a6ff;
+      --gradient-end: #bc8cff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(13,17,23,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.8rem 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    nav .logo { font-weight: 700; font-size: 1.1rem; color: var(--accent); }
+    nav ul { list-style: none; display: flex; gap: 1.5rem; }
+    nav a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: color .2s; }
+    nav a:hover { color: var(--accent); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 30%, rgba(88,166,255,0.08) 0%, transparent 60%),
+                  radial-gradient(ellipse at 70% 70%, rgba(188,140,255,0.06) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .hero .badge {
+      display: inline-block;
+      background: rgba(88,166,255,0.12);
+      color: var(--accent);
+      font-size: 0.8rem; font-weight: 500;
+      padding: 0.4rem 1rem; border-radius: 999px;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(88,166,255,0.2);
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+    }
+    .hero .subtitle {
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      color: var(--text-muted);
+      max-width: 700px;
+      margin-bottom: 2rem;
+    }
+    .hero .cta-row { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+    .btn {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: 0.7rem 1.6rem; border-radius: 8px;
+      font-weight: 500; font-size: 0.95rem;
+      text-decoration: none; transition: all .25s;
+      cursor: pointer; border: none;
+    }
+    .btn-primary { background: var(--accent); color: #000; }
+    .btn-primary:hover { filter: brightness(1.15); transform: translateY(-1px); }
+    .btn-outline { border: 1px solid var(--border); color: var(--text); background: transparent; }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ── SECTION ── */
+    section { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.8rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.5rem;
+    }
+    section h2 {
+      font-size: 2rem; font-weight: 700; margin-bottom: 1rem;
+      letter-spacing: -0.015em;
+    }
+    section p.lead { color: var(--text-muted); font-size: 1.05rem; max-width: 750px; margin-bottom: 2.5rem; }
+
+    /* ── CARDS GRID ── */
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 1.5rem; }
+    .card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+      padding: 1.8rem; transition: all .25s;
+    }
+    .card:hover { border-color: var(--accent); background: var(--bg-card-hover); transform: translateY(-2px); }
+    .card .icon { font-size: 1.8rem; margin-bottom: 1rem; }
+    .card h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+    .card p { color: var(--text-muted); font-size: 0.92rem; }
+
+    /* ── METRICS ROW ── */
+    .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 1.5rem; margin: 2.5rem 0; }
+    .metric {
+      text-align: center; padding: 2rem 1rem;
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+    }
+    .metric .value {
+      font-size: 2.6rem; font-weight: 700;
+      background: linear-gradient(135deg, var(--accent-green), var(--accent));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .metric .label { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.3rem; }
+
+    /* ── TABLE ── */
+    .table-wrapper { overflow-x: auto; margin: 2rem 0; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    th, td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid var(--border); }
+    th { color: var(--text-muted); font-weight: 500; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    td { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; }
+    tr:hover td { background: rgba(88,166,255,0.04); }
+    .tag {
+      display: inline-block; padding: 0.15rem 0.6rem; border-radius: 999px;
+      font-size: 0.75rem; font-weight: 500;
+    }
+    .tag-green { background: rgba(63,185,80,0.15); color: var(--accent-green); }
+    .tag-yellow { background: rgba(210,153,34,0.15); color: var(--accent-orange); }
+    .tag-gray { background: rgba(139,148,158,0.15); color: var(--text-muted); }
+
+    /* ── MATH BOX ── */
+    .math-box {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+      padding: 2rem; margin: 1.5rem 0; overflow-x: auto;
+    }
+    .math-box h4 { font-size: 0.95rem; color: var(--accent); margin-bottom: 1rem; }
+    .math-box .katex { font-size: 1.05rem; }
+
+    /* ── ARCHITECTURE DIAGRAM ── */
+    .arch-diagram {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+      padding: 2.5rem; margin: 2rem 0; text-align: center;
+    }
+    .arch-diagram svg { max-width: 100%; height: auto; }
+    .arch-flow {
+      display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 0.5rem;
+      margin: 1.5rem 0;
+    }
+    .arch-step {
+      background: rgba(88,166,255,0.1); border: 1px solid rgba(88,166,255,0.25);
+      border-radius: 8px; padding: 0.8rem 1.2rem; font-size: 0.85rem; font-weight: 500;
+      color: var(--accent); min-width: 120px; text-align: center;
+    }
+    .arch-arrow { color: var(--text-muted); font-size: 1.2rem; }
+
+    /* ── TIMELINE ── */
+    .timeline { position: relative; padding-left: 2rem; }
+    .timeline::before { content:''; position:absolute; left:0; top:0; bottom:0; width:2px; background: var(--border); }
+    .timeline-item { position: relative; margin-bottom: 2rem; }
+    .timeline-item::before {
+      content:''; position:absolute; left:-2rem; top:0.35rem;
+      width:12px; height:12px; border-radius:50%;
+      background: var(--accent); border: 2px solid var(--bg);
+    }
+    .timeline-item h4 { font-size:1rem; margin-bottom:0.3rem; }
+    .timeline-item p { color: var(--text-muted); font-size:0.9rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center; padding: 3rem 2rem;
+      color: var(--text-muted); font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      nav ul { display: none; }
+      .metrics { grid-template-columns: repeat(2,1fr); }
+      .arch-flow { flex-direction: column; }
+      .arch-arrow { transform: rotate(90deg); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════ NAV ═══════════ -->
+<nav>
+  <div class="logo">ETDM</div>
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#model">Model</a></li>
+    <li><a href="#architecture">Architecture</a></li>
+    <li><a href="#results">Results</a></li>
+    <li><a href="#problems">Problems</a></li>
+    <li><a href="#tech">Tech Stack</a></li>
+  </ul>
+</nav>
+
+<!-- ═══════════ HERO ═══════════ -->
+<div class="hero">
+  <span class="badge">🎓 M.Sc. Thesis — In Progress</span>
+  <h1>Enhanced Twin Discovery Model</h1>
+  <p class="subtitle">
+    A distributed protocol that discovers hidden twin shortcuts at runtime 
+    to accelerate classical algorithms over lossy networks — no prior knowledge required.
+  </p>
+  <div class="cta-row">
+    <a href="#results" class="btn btn-primary">View Results</a>
+    <a href="#model" class="btn btn-outline">Mathematical Model</a>
+  </div>
+</div>
+
+<!-- ═══════════ OVERVIEW ═══════════ -->
+<section id="overview">
+  <div class="section-label">Overview</div>
+  <h2>What is ETDM?</h2>
+  <p class="lead">
+    Classical distributed algorithms suffer severe performance degradation as packet loss 
+    increases — especially on high-diameter topologies like Rings. ETDM augments these 
+    algorithms with dynamically discovered <em>twin shortcuts</em> that bridge distant 
+    regions of the network, reducing effective diameter and accelerating information propagation.
+  </p>
+
+  <div class="cards">
+    <div class="card">
+      <div class="icon">🔍</div>
+      <h3>Runtime Twin Discovery</h3>
+      <p>No oracle, no prior knowledge. Twins are discovered at runtime through EWMA scoring 
+         and a three-way handshake protocol over the same lossy channel.</p>
+    </div>
+    <div class="card">
+      <div class="icon">📡</div>
+      <h3>Lossy Channel Model</h3>
+      <p>Deterministic BLAKE2b-based loss oracle ensures reproducibility. Per-link loss 
+         rates with twin links enjoying lower loss ($q_{\text{twin}} \ll q_{\text{base}}$).</p>
+    </div>
+    <div class="card">
+      <div class="icon">⚡</div>
+      <h3>Shortcut-Based Acceleration</h3>
+      <p>Discovered twins create non-neighbor shortcuts, reducing Ring diameter from 
+         $\lfloor n/2 \rfloor$ to ~$\lfloor n/4 \rfloor$ and diffusion time from $O(n^2)$ to $O(n)$.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🧪</div>
+      <h3>Fair Experimental Framework</h3>
+      <p>Both classical and ETDM algorithms run on the same network instance, same loss oracle, 
+         same seed — ensuring a rigorous, apples-to-apples comparison.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ KEY METRICS ═══════════ -->
+<section>
+  <div class="metrics">
+    <div class="metric">
+      <div class="value">25.4%</div>
+      <div class="label">Avg. speedup on Consensus</div>
+    </div>
+    <div class="metric">
+      <div class="value">67.4%</div>
+      <div class="label">Peak speedup (N=50, Consensus)</div>
+    </div>
+    <div class="metric">
+      <div class="value">12.8%</div>
+      <div class="label">Avg. speedup on Leader Election</div>
+    </div>
+    <div class="metric">
+      <div class="value">6</div>
+      <div class="label">Distributed problems tested</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ MATHEMATICAL MODEL ═══════════ -->
+<section id="model">
+  <div class="section-label">Formal Model</div>
+  <h2>Mathematical Foundations</h2>
+  <p class="lead">
+    ETDM is formalized as a complete mathematical system 
+    $\mathfrak{F} = (G, \pi, \mathcal{S}, \mathcal{M}, \mathcal{C}, L, \Theta, f_{\text{discovery}}, f_{\text{app}})$ 
+    with rigorous definitions for every component.
+  </p>
+
+  <div class="math-box">
+    <h4>Network &amp; Loss Oracle</h4>
+    <p>Communication graph $G = (V, E)$ with $n$ nodes. Deterministic loss oracle:</p>
+    <p style="text-align:center; margin-top:1rem;">
+      $$L(r, u, v, c) = \begin{cases} 1 \text{ (dropped)}, & \text{if } H(\text{seed}, r, u, v, c) < q_{u,v} \\ 0 \text{ (delivered)}, & \text{otherwise} \end{cases}$$
+    </p>
+    <p style="margin-top:0.75rem; color:var(--text-muted); font-size:0.9rem;">
+      where $H$ is a BLAKE2b hash and $q_{u,v} = \text{clamp}(q_{\text{base}} + \xi_{u,v},\; 0.01,\; 0.99)$.
+    </p>
+  </div>
+
+  <div class="math-box">
+    <h4>Hidden Twin Mapping</h4>
+    <p>An involutive ground-truth mapping — unknown to the algorithm:</p>
+    <p style="text-align:center; margin-top:1rem;">
+      $$\pi: V \to V, \quad \pi(\pi(u)) = u, \quad \pi(u) \neq u \;\; \forall u \in V$$
+    </p>
+    <p style="margin-top:0.75rem; color:var(--text-muted); font-size:0.9rem;">
+      Twin links $(u, \pi(u))$ have loss rate $q_{\text{twin}} \ll q_{\text{base}}$, creating a discoverable signal.
+    </p>
+  </div>
+
+  <div class="math-box">
+    <h4>EWMA Scoring &amp; Twin Discovery</h4>
+    <p>Each node maintains exponentially weighted scores for peers:</p>
+    <p style="text-align:center; margin-top:1rem;">
+      $$s_u(v, r{+}1) = (1 - \lambda)\, s_u(v, r) + \lambda \cdot o$$
+    </p>
+    <p style="margin-top:0.5rem; color:var(--text-muted); font-size:0.9rem;">
+      Sigmoid confidence: $c_u(v,r) = \frac{1}{1 + e^{-\alpha \cdot s_u(v,r)}}$. Candidate selected as 
+      $p_u^* = \arg\max_{v \in K_u \setminus (N(u) \cup \{u\})} s_u(v,r)$ with hysteresis threshold $\eta$.
+    </p>
+  </div>
+
+  <div class="math-box">
+    <h4>Three-Way Handshake Protocol</h4>
+    <p>Twin locking follows a strict handshake with nonce verification:</p>
+    <p style="text-align:center; margin-top:1rem;">
+      $$u \xrightarrow{\text{PROPOSE}(n_u, k_u)} v \xrightarrow{\text{ACCEPT}(n_u, n_v, k_u)} u \xrightarrow{\text{CONFIRM}(n_v, k_u)} v$$
+    </p>
+    <p style="margin-top:0.5rem; color:var(--text-muted); font-size:0.9rem;">
+      Upon completion: $L_u = 1, \text{tw}_u = v, L_v = 1, \text{tw}_v = u$ — the twin shortcut is active.
+    </p>
+  </div>
+
+  <div class="math-box">
+    <h4>Dynamic Extended Neighborhood</h4>
+    <p>Once locked, the application layer gains an extra communication target:</p>
+    <p style="text-align:center; margin-top:1rem;">
+      $$N'_u(r) = \begin{cases} N(u) \cup \{\text{tw}_u(r)\}, & \text{if locked and } \text{tw}_u \notin N(u) \\ N(u), & \text{otherwise}\end{cases}$$
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════ ARCHITECTURE ═══════════ -->
+<section id="architecture">
+  <div class="section-label">Architecture</div>
+  <h2>Protocol Phases &amp; State Machine</h2>
+  <p class="lead">
+    Each synchronous round consists of 5 ordered passes. The ETDM sub-layer operates 
+    in passes 1-4, while the application algorithm executes in pass 5.
+  </p>
+
+  <div class="arch-diagram">
+    <h4 style="color:var(--text-muted); font-size:0.85rem; margin-bottom:1.5rem;">ROUND STRUCTURE</h4>
+    <div class="arch-flow">
+      <div class="arch-step">Pass 1<br><small>Proactive<br>HELLO / PROPOSE</small></div>
+      <span class="arch-arrow">→</span>
+      <div class="arch-step">Pass 2<br><small>Reactive<br>ACCEPT / REJECT</small></div>
+      <span class="arch-arrow">→</span>
+      <div class="arch-step">Pass 3<br><small>Remaining<br>CONFIRM</small></div>
+      <span class="arch-arrow">→</span>
+      <div class="arch-step">Pass 4<br><small>Timeouts<br>Score Decay</small></div>
+      <span class="arch-arrow">→</span>
+      <div class="arch-step" style="border-color:rgba(188,140,255,0.4); color:var(--accent-purple);">Pass 5<br><small>Application<br>Algorithm</small></div>
+    </div>
+  </div>
+
+  <div class="arch-diagram">
+    <h4 style="color:var(--text-muted); font-size:0.85rem; margin-bottom:1.5rem;">NODE STATE MACHINE</h4>
+    <div class="arch-flow">
+      <div class="arch-step">IDLE</div>
+      <span class="arch-arrow">→</span>
+      <div class="arch-step">SEARCHING</div>
+      <span class="arch-arrow">→</span>
+      <div class="arch-step">PROPOSING</div>
+      <span class="arch-arrow">→</span>
+      <div class="arch-step" style="border-color:rgba(63,185,80,0.4); color:var(--accent-green);">LOCKED ✓</div>
+    </div>
+    <p style="color:var(--text-muted); font-size:0.8rem; margin-top:1rem;">
+      Rollback: PROPOSING → SEARCHING (on REJECT/timeout) &nbsp;|&nbsp; LOCKED → SEARCHING (on heartbeat timeout)
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════ RESULTS ═══════════ -->
+<section id="results">
+  <div class="section-label">Experimental Results</div>
+  <h2>Empirical Evaluation</h2>
+  <p class="lead">
+    Tested across N=10 to 10,000 nodes, Ring/Mesh/Complete topologies, 
+    loss rates 0%–40%, with multiple seeds per configuration for statistical significance.
+  </p>
+
+  <h3 style="margin-bottom:1rem;">Leader Election (Max-ID Flooding)</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr><th>Loss Rate</th><th>Classic (rounds)</th><th>ETDM (rounds)</th><th>Improvement</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>0%</td><td>10.0</td><td>9.1</td><td><span class="tag tag-green">+9.3%</span></td></tr>
+        <tr><td>5%</td><td>10.5</td><td>9.1</td><td><span class="tag tag-green">+13.4%</span></td></tr>
+        <tr><td>10%</td><td>10.7</td><td>9.3</td><td><span class="tag tag-green">+13.0%</span></td></tr>
+        <tr><td>20%</td><td>11.9</td><td>10.3</td><td><span class="tag tag-green">+12.9%</span></td></tr>
+        <tr><td>30%</td><td>13.5</td><td>11.7</td><td><span class="tag tag-green">+12.9%</span></td></tr>
+        <tr><td>40%</td><td>16.0</td><td>14.7</td><td><span class="tag tag-green">+8.3%</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="margin: 2rem 0 1rem;">Binary Consensus (Averaging Diffusion)</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr><th>Config</th><th>Classic (rounds)</th><th>ETDM (rounds)</th><th>Improvement</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>N=10</td><td>14.3</td><td>13.2</td><td><span class="tag tag-green">+7.7%</span></td></tr>
+        <tr><td>N=20</td><td>47.3</td><td>38.0</td><td><span class="tag tag-green">+19.7%</span></td></tr>
+        <tr><td>N=30</td><td>107.4</td><td>63.3</td><td><span class="tag tag-green">+41.1%</span></td></tr>
+        <tr><td>N=40</td><td>189.5</td><td>76.8</td><td><span class="tag tag-green">+59.5%</span></td></tr>
+        <tr><td>N=50</td><td>255.2</td><td>83.2</td><td><span class="tag tag-green">+67.4%</span></td></tr>
+        <tr><td style="color:var(--text-muted);">Loss=15%</td><td>44.9</td><td>23.7</td><td><span class="tag tag-green">+47.2%</span></td></tr>
+        <tr><td style="color:var(--text-muted);">Loss=40%</td><td>47.0</td><td>30.3</td><td><span class="tag tag-green">+35.6%</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="margin: 2rem 0 1rem;">Topology Impact</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr><th>Topology</th><th>Leader Election Δ</th><th>Consensus Δ</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Ring</td><td><span class="tag tag-green">+12.9%</span></td><td><span class="tag tag-green">+22.4%</span></td></tr>
+        <tr><td>Mesh</td><td><span class="tag tag-green">+10.2%</span></td><td><span class="tag tag-green">+11.4%</span></td></tr>
+        <tr><td>Complete</td><td><span class="tag tag-gray">0%</span></td><td><span class="tag tag-gray">0%</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ═══════════ PROBLEMS ═══════════ -->
+<section id="problems">
+  <div class="section-label">Problem Coverage</div>
+  <h2>Six Distributed Problems</h2>
+  <p class="lead">
+    ETDM is a <strong>conditional accelerator</strong> — its benefit depends on whether 
+    the problem requires network-wide information propagation.
+  </p>
+
+  <div class="cards">
+    <div class="card">
+      <div class="icon">👑</div>
+      <h3>Leader Election</h3>
+      <p>Max-ID flooding. ETDM shortcuts propagate the max ID faster across the network.</p>
+      <p style="margin-top:0.8rem;"><span class="tag tag-green">+12.8% avg improvement</span></p>
+    </div>
+    <div class="card">
+      <div class="icon">🤝</div>
+      <h3>Binary Consensus</h3>
+      <p>Averaging diffusion. Twin bridges reduce mixing time dramatically on Rings.</p>
+      <p style="margin-top:0.8rem;"><span class="tag tag-green">+25.4% avg improvement</span></p>
+    </div>
+    <div class="card">
+      <div class="icon">🌳</div>
+      <h3>BFS Spanning Tree</h3>
+      <p>ETDM produces significantly shallower trees at the cost of more rounds.</p>
+      <p style="margin-top:0.8rem;"><span class="tag tag-yellow">Quality ↑ / Speed ↓</span></p>
+    </div>
+    <div class="card">
+      <div class="icon">🛡️</div>
+      <h3>Vertex Cover</h3>
+      <p>Slight quality improvements (smaller covers) with marginal speed trade-off.</p>
+      <p style="margin-top:0.8rem;"><span class="tag tag-yellow">Mixed</span></p>
+    </div>
+    <div class="card">
+      <div class="icon">🎯</div>
+      <h3>Maximal Independent Set</h3>
+      <p>Local symmetry breaking — ETDM's global shortcuts don't help a local process.</p>
+      <p style="margin-top:0.8rem;"><span class="tag tag-gray">Neutral</span></p>
+    </div>
+    <div class="card">
+      <div class="icon">🎨</div>
+      <h3>Vertex Coloring</h3>
+      <p>Deterministic coloring converges identically — no benefit from shortcuts.</p>
+      <p style="margin-top:0.8rem;"><span class="tag tag-gray">Neutral</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ TECH STACK ═══════════ -->
+<section id="tech">
+  <div class="section-label">Implementation</div>
+  <h2>Tech Stack &amp; Codebase</h2>
+  <p class="lead">
+    ~15,000 lines of Python implementing the full ETDM model, 6 problem domains, 
+    and a fair comparison framework with deterministic reproducibility.
+  </p>
+
+  <div class="cards">
+    <div class="card">
+      <h3>🐍 Python</h3>
+      <p>Core simulation engine, algorithms, and experimental framework.</p>
+    </div>
+    <div class="card">
+      <h3>🔐 BLAKE2b</h3>
+      <p>Deterministic loss oracle — fully reproducible experiments across runs.</p>
+    </div>
+    <div class="card">
+      <h3>📊 Modular Architecture</h3>
+      <p>Each problem (leader election, consensus, MIS, etc.) is a self-contained module 
+         with classic baseline, ETDM variant, and fair comparison harness.</p>
+    </div>
+    <div class="card">
+      <h3>📝 LaTeX</h3>
+      <p>Full formal mathematical model and thesis document with rigorous proofs and definitions.</p>
+    </div>
+  </div>
+
+  <div class="arch-diagram" style="text-align:left; margin-top:2rem;">
+    <h4 style="color:var(--accent); margin-bottom:1rem; font-size:0.95rem;">Project Structure</h4>
+    <pre style="color:var(--text-muted); font-family:'JetBrains Mono',monospace; font-size:0.82rem; line-height:1.8; overflow-x:auto;">
+Model/
+├── leader_election/       # Max-ID flooding + ETDM protocol
+│   ├── models/            # Network, loss oracle, ETDM engine
+│   ├── algorithms/        # Classic & ETDM leader election
+│   └── experiments/       # Fair comparison framework
+├── consensus/             # Averaging diffusion consensus
+├── spanning_tree/         # BFS spanning tree construction
+├── mis/                   # Maximal Independent Set (Luby's)
+├── vertex_coloring/       # Deterministic graph coloring
+├── vertex_cover/          # Greedy vertex cover
+└── detailed_evaluation/   # Cross-problem analysis scripts</pre>
+  </div>
+</section>
+
+<!-- ═══════════ KEY INSIGHT ═══════════ -->
+<section>
+  <div class="section-label">Key Insight</div>
+  <h2>When Does ETDM Help?</h2>
+  <div class="math-box" style="border-left: 3px solid var(--accent);">
+    <p style="font-size:1.05rem; line-height:1.8;">
+      <strong>ETDM excels</strong> when the algorithm's bottleneck is <em>global information propagation</em> 
+      across a high-diameter network. The twin shortcut effectively halves the information propagation 
+      distance, yielding the most dramatic improvements on Ring topologies and for problems like 
+      Consensus (up to <strong>67.4% faster</strong>) and Leader Election.
+    </p>
+    <p style="font-size:1.05rem; line-height:1.8; margin-top:1rem;">
+      <strong>ETDM is neutral</strong> when the problem is <em>inherently local</em> (MIS, Coloring) — 
+      global shortcuts simply aren't utilized by the algorithm. This problem-dependent behavior 
+      makes ETDM a <strong>targeted optimization tool</strong> rather than a universal replacement.
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <p style="margin-bottom:0.5rem;">
+    <strong>Enhanced Twin Discovery Model (ETDM)</strong> — M.Sc. Thesis (In Progress)
+  </p>
+  <p>Ege University · Department of Computer Engineering</p>
+</footer>
+
+</body>
+</html>
