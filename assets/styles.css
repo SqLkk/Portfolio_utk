@@ -464,43 +464,84 @@ ol {
   color: #94a3b8;
 }
 
-/* Metrics Strip */
-.metrics-strip {
-  margin-top: 2.25rem;
+/* Experience Intro & Prior Internships Strip */
+.exp-intro {
+  max-width: 74ch;
+  font-size: 1.02rem;
+  line-height: 1.65;
+  color: var(--ink-secondary);
+  margin-bottom: 1.6rem;
+}
+
+.prior-grid {
+  margin-top: 1.25rem;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.prior-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1.1rem 1.35rem;
   background-color: var(--surface);
   border: 1px solid var(--border);
-  border-top: 3px solid var(--accent);
+  border-radius: var(--radius-md);
+}
+
+.prior-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.prior-company {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.prior-date {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+}
+
+.prior-role {
+  font-size: 0.9rem;
+  color: var(--ink-secondary);
+}
+
+/* Stack Grid */
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.stack-card {
+  padding: 1.35rem 1.5rem;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
-  overflow: hidden;
 }
 
-.metric-cell {
-  padding: 1.35rem 1.5rem;
-  border-right: 1px solid var(--border);
+.stack-card-wide {
+  grid-column: span 2;
 }
 
-.metric-cell:last-child {
-  border-right: none;
-}
-
-.metric-value {
+.stack-card-title {
   font-family: var(--font-mono);
-  font-variant-numeric: tabular-nums;
-  font-size: clamp(1.8rem, 2.6vw, 2.3rem);
-  font-weight: 700;
-  letter-spacing: -0.025em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   color: var(--accent);
-  line-height: 1.15;
-}
-
-.metric-label {
-  margin-top: 0.35rem;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--ink-secondary);
+  margin-bottom: 0.8rem;
 }
 
 /* Sections */
@@ -980,6 +1021,11 @@ ol {
   box-shadow: var(--shadow-sm);
 }
 
+.panel + .project-featured {
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+}
+
 .panel-title {
   font-family: var(--font-mono);
   font-size: 0.82rem;
@@ -1394,25 +1440,8 @@ html[data-theme="dark"] .delta-mix {
 @media (max-width: 960px) {
   .hero-grid,
   .project-featured,
-  .background-grid {
-    grid-template-columns: 1fr;
-  }
-
   .project-strip {
     grid-template-columns: 1fr;
-  }
-
-  .metrics-strip {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .metric-cell:nth-child(2) {
-    border-right: none;
-  }
-
-  .metric-cell:nth-child(1),
-  .metric-cell:nth-child(2) {
-    border-bottom: 1px solid var(--border);
   }
 }
 
@@ -1434,6 +1463,8 @@ html[data-theme="dark"] .delta-mix {
   }
 
   .work-grid,
+  .prior-grid,
+  .stack-grid,
   .project-grid,
   .gallery-grid,
   .math-grid,
@@ -1445,28 +1476,10 @@ html[data-theme="dark"] .delta-mix {
   .table-card-wide {
     grid-column: span 1;
   }
-
-  .stack-row {
-    grid-template-columns: 1fr;
-    gap: 0.25rem;
-  }
 }
 
 @media (max-width: 520px) {
   .hero {
     padding: 2.5rem 0 2rem;
-  }
-
-  .metrics-strip {
-    grid-template-columns: 1fr;
-  }
-
-  .metric-cell {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .metric-cell:last-child {
-    border-bottom: none;
   }
 }

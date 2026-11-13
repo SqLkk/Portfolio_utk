@@ -6,7 +6,7 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none';" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <!-- TODO(security): HTTP response headers X-Frame-Options, CSP frame-ancestors, Permissions-Policy, and X-Content-Type-Options: nosniff are controlled by GitHub Pages static hosting and cannot be set via HTML meta tags. -->
-  <title>Utku Karaca — Software Engineer (Distributed Systems, C++ &amp; Backend)</title>
+  <title>Utku Karaca — Software Engineer | Siemens Grid Software R&amp;D</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -20,10 +20,11 @@
         <span class="brand-loc">Bratislava, SK</span>
       </a>
       <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#work">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="thesis.html">Research</a>
-        <a href="#background">Background</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#stack">Stack</a>
+        <a href="#research">M.Sc. &amp; Education</a>
+        <a href="#tools">Tools &amp; Projects</a>
       </nav>
       <div class="header-actions">
         <button id="theme-toggle" type="button" class="icon-btn" aria-label="Switch to dark theme">Dark</button>
@@ -32,26 +33,28 @@
       </div>
     </div>
     <nav id="mobile-nav" class="container mobile-nav" aria-label="Mobile navigation">
-      <a href="#work">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="thesis.html">Research (ETDM)</a>
-      <a href="#background">Education &amp; Stack</a>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#stack">Technical Stack</a>
+      <a href="#research">M.Sc. &amp; Education</a>
+      <a href="#tools">Tools &amp; Projects</a>
       <a href="uk_resume.pdf" target="_blank" rel="noopener noreferrer">Resume (PDF) ↗</a>
     </nav>
   </header>
 
-  <section class="hero-band">
+  <!-- HERO: WHO I AM & WHAT I DO -->
+  <section id="about" class="hero-band">
     <div class="container hero">
       <div class="hero-grid">
         <div>
           <div class="status-pill">
             <span class="status-dot" aria-hidden="true"></span>
-            <span>Siemens Grid Software R&amp;D · Bratislava, Slovakia</span>
+            <span>Software Engineer · Bratislava, Slovakia</span>
           </div>
           <h1 class="hero-title">Utku Karaca</h1>
-          <p class="hero-role">Distributed Systems, C++ &amp; Backend Infrastructure Engineer</p>
+          <p class="hero-role">Backend &amp; Distributed Systems Engineer at Siemens</p>
           <p class="hero-summary">
-            Building high-throughput C++ event gateways, 0-to-1 real-time operational analytics platforms, and fault-tolerant distributed protocols for live power grids.
+            I am a software engineer in Siemens Grid Software R&amp;D, building backend infrastructure and distributed C++ and Python services for live power-grid control centers. My work focuses on event-streaming gateways, low-latency Linux/UNIX runtime daemons, and operational data platforms.
           </p>
           <div class="cta-group">
             <a href="uk_resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Resume (PDF) ↗</a>
@@ -61,60 +64,40 @@
           </div>
         </div>
 
-        <aside class="hero-showcase" aria-label="Systems focus overview">
+        <aside class="hero-showcase" aria-label="Core engineering focus">
           <div class="showcase-bar">
             <span class="window-dots" aria-hidden="true">
               <span class="window-dot"></span>
               <span class="window-dot"></span>
               <span class="window-dot"></span>
             </span>
-            <span class="showcase-title">systems-overview :: production &amp; research</span>
+            <span class="showcase-title">engineering-profile :: core-domains</span>
           </div>
           <div class="showcase-body">
             <div class="showcase-item">
-              <p class="showcase-kicker">Core Infrastructure</p>
-              <p class="showcase-val">C++17/20 Event Gateways &amp; Shared-Memory Daemons</p>
-              <p class="showcase-sub">Apache Kafka · REST / SSE · RHEL &amp; AIX Clusters</p>
+              <p class="showcase-kicker">Distributed Infrastructure</p>
+              <p class="showcase-val">Event-Driven Gateways &amp; Service Integration</p>
+              <p class="showcase-sub">C++17/20 · Apache Kafka · REST / SSE · CloudEvents</p>
             </div>
             <div class="showcase-item">
-              <p class="showcase-kicker">0-to-1 Platform Ownership</p>
-              <p class="showcase-val">Real-Time Grid Analytics &amp; Active/Standby HA</p>
-              <p class="showcase-sub">Python AST Engine · Oracle Time-Series · IEC 62443</p>
+              <p class="showcase-kicker">Core Systems &amp; Runtime</p>
+              <p class="showcase-val">Low-Latency Daemons &amp; Shared-Memory IPC</p>
+              <p class="showcase-sub">C / C++ · Multithreading · Linux (RHEL) &amp; AIX</p>
             </div>
             <div class="showcase-item">
-              <p class="showcase-kicker">Distributed Research &amp; OSS</p>
-              <p class="showcase-val">etdmnet (WebRTC P2P) &amp; Lossy-Network Consensus</p>
-              <p class="showcase-sub">Kotlin Multiplatform · M.Sc. Thesis @ Ege Univ.</p>
+              <p class="showcase-kicker">Operational Data Platforms</p>
+              <p class="showcase-val">Time-Series Databases &amp; Grid Analytics</p>
+              <p class="showcase-sub">Python · Oracle · High-Availability Clustering</p>
             </div>
           </div>
         </aside>
-      </div>
-
-      <div class="metrics-strip" aria-label="Career highlights">
-        <div class="metric-cell">
-          <p class="metric-value">~4 Years</p>
-          <p class="metric-label">Siemens Grid R&amp;D</p>
-        </div>
-        <div class="metric-cell">
-          <p class="metric-value">0 → 1</p>
-          <p class="metric-label">Live Grid Analytics Platform</p>
-        </div>
-        <div class="metric-cell">
-          <p class="metric-value">90% Faster</p>
-          <p class="metric-label">25-Yr Binary Data Migration</p>
-        </div>
-        <div class="metric-cell">
-          <p class="metric-value">67.4%</p>
-          <p class="metric-label">Lossy-Ring Consensus Speedup</p>
-        </div>
       </div>
     </div>
   </section>
 
   <main class="container">
-
-    <!-- EXPERIENCE -->
-    <section id="work" class="section">
+    <!-- WORK EXPERIENCE -->
+    <section id="experience" class="section">
       <div class="section-header">
         <div>
           <p class="section-kicker">Work Experience</p>
@@ -123,15 +106,19 @@
         <p class="section-meta">Feb 2023 – Present · Bratislava &amp; Ankara</p>
       </div>
 
+      <p class="exp-intro">
+        Software Engineer in the Core Platform &amp; Distributed Systems R&amp;D organization (relocated from Ankara to Bratislava in 2025), developing mission-critical control-center backends, integration gateways, and operational data tooling across international utility deployments.
+      </p>
+
       <div class="work-grid">
         <article class="work-card">
           <div class="work-card-top">
             <h3 class="card-title">Cloud-to-Core Event Gateway</h3>
             <span class="role-badge">Lead Developer</span>
           </div>
-          <div class="flow-pill">Cloud SaaS ⇄ Kafka / REST / SSE ⇄ Real-Time Grid Core</div>
+          <div class="flow-pill">Cloud Grid SaaS ⇄ Apache Kafka &amp; SSE ⇄ On-Prem Control Core</div>
           <p class="card-desc">
-            Architected 4 C++ communication services streaming CloudEvents, real-time alarms, and validated switching sequences with multi-site hot-standby failover.
+            Design and build C++ communication services bridging cloud grid-analysis applications with on-premise real-time control infrastructure over Kafka and REST/SSE, supporting multi-site hot-standby failover.
           </p>
           <div class="card-footer">
             <div class="tag-list">
@@ -145,51 +132,51 @@
 
         <article class="work-card">
           <div class="work-card-top">
-            <h3 class="card-title">Operational Analytics Platform</h3>
-            <span class="role-badge">Creator &amp; Sole Owner</span>
+            <h3 class="card-title">Operational Grid Analytics Platform</h3>
+            <span class="role-badge">Creator &amp; Owner</span>
           </div>
-          <div class="flow-pill">Live Telemetry + Oracle Time-Series → Active/Standby HA</div>
+          <div class="flow-pill">Live Telemetry + Oracle Historical DB → Active/Standby HA</div>
           <p class="card-desc">
-            Built and shipped a 0-to-1 grid analytics platform with sub-second queries, an AST-sandboxed Python engine, topology maps, and IEC 62443 / NIS 2 compliance.
+            Architected and own an industrial analytics and reporting platform combining live telemetry with Oracle time-series databases, sandboxed Python queries, topology maps, Active Directory RBAC, and HA failover.
           </p>
           <div class="card-footer">
             <div class="tag-list">
               <span class="tag">Python</span>
               <span class="tag">Oracle</span>
               <span class="tag">Angular</span>
-              <span class="tag">HA Clustering</span>
+              <span class="tag">IEC 62443</span>
             </div>
-            <a href="advanced-reports.html" class="inline-link">Platform Preview →</a>
+            <a href="advanced-reports.html" class="inline-link">Interface Preview →</a>
           </div>
         </article>
 
         <article class="work-card">
           <div class="work-card-top">
-            <h3 class="card-title">In-Memory Data Kernel &amp; Daemons</h3>
+            <h3 class="card-title">In-Memory Kernel &amp; C/C++ Daemons</h3>
             <span class="role-badge">Core Platform</span>
           </div>
-          <div class="flow-pill">Shared-Memory IPC · Multithreading · RHEL / AIX</div>
+          <div class="flow-pill">Shared-Memory IPC · Multithreading · RHEL &amp; AIX</div>
           <p class="card-desc">
-            Own low-latency C/C++ runtime daemons and shared-memory kernels powering live control centers, resolving race conditions and IPC deadlocks via GDB/DBX.
+            Maintain and modernize core C/C++ runtime daemons and shared-memory data access kernels across multi-site UNIX/Linux clusters, resolving multithreading race conditions and IPC deadlocks via GDB and DBX.
           </p>
           <div class="card-footer">
             <div class="tag-list">
               <span class="tag">C / C++</span>
               <span class="tag">Shared-Memory IPC</span>
               <span class="tag">GDB / DBX</span>
-              <span class="tag">Linux / UNIX</span>
+              <span class="tag">RHEL / AIX</span>
             </div>
           </div>
         </article>
 
         <article class="work-card">
           <div class="work-card-top">
-            <h3 class="card-title">25-Year Migration &amp; RTU Ingestion</h3>
-            <span class="role-badge">Data Infrastructure</span>
+            <h3 class="card-title">Legacy Data Migration &amp; RTU Pipelines</h3>
+            <span class="role-badge">Data Engineering</span>
           </div>
-          <div class="flow-pill">Legacy Pascal Binary → Automated Python/Oracle ETL</div>
+          <div class="flow-pill">Legacy Binary Archives → Automated Python/Oracle ETL</div>
           <p class="card-desc">
-            Reverse-engineered undocumented binary storage to migrate 25 years of time-series data in 2 months with zero loss, alongside automated RTU backfill pipelines.
+            Reverse-engineered undocumented Pascal binary storage formats to automate multi-decade historical time-series migrations into Oracle, alongside RTU-simulated telemetry ingestion and gap-backfill services.
           </p>
           <div class="card-footer">
             <div class="tag-list">
@@ -201,37 +188,139 @@
           </div>
         </article>
       </div>
+
+      <div class="prior-grid" aria-label="Earlier internships">
+        <div class="prior-card">
+          <div class="prior-top">
+            <span class="prior-company">Siemens · Smart Grid Systems</span>
+            <span class="prior-date">Sep 2021 – Dec 2021 · Ankara</span>
+          </div>
+          <p class="prior-role">Software Engineering Intern (Full-Time Co-op)</p>
+        </div>
+        <div class="prior-card">
+          <div class="prior-top">
+            <span class="prior-company">TOBB ETÜ Research Lab</span>
+            <span class="prior-date">Jan 2021 – Apr 2021 · Ankara</span>
+          </div>
+          <p class="prior-role">Undergraduate Research Intern — Deep Learning &amp; Pattern Recognition</p>
+        </div>
+      </div>
     </section>
 
-    <!-- PROJECTS & VISUAL SHOWCASE -->
-    <section id="projects" class="section">
+    <!-- TECHNICAL STACK -->
+    <section id="stack" class="section">
       <div class="section-header">
         <div>
-          <p class="section-kicker">Selected Projects &amp; Research</p>
-          <h2 class="section-title">Systems, Tools &amp; Visual Previews</h2>
+          <p class="section-kicker">Capabilities</p>
+          <h2 class="section-title">Technical Stack</h2>
         </div>
-        <p class="section-meta">Open-source · Commercial · Production UI</p>
       </div>
 
-      <!-- Featured: etdmnet + ETDM Thesis -->
+      <div class="stack-grid">
+        <div class="stack-card">
+          <p class="stack-card-title">Languages</p>
+          <div class="tag-list">
+            <span class="tag">C++ (C++17/20)</span>
+            <span class="tag">C</span>
+            <span class="tag">Python</span>
+            <span class="tag">Kotlin</span>
+            <span class="tag">Java</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">SQL / PL/SQL</span>
+            <span class="tag">Bash</span>
+          </div>
+        </div>
+
+        <div class="stack-card">
+          <p class="stack-card-title">Distributed &amp; Backend</p>
+          <div class="tag-list">
+            <span class="tag">Apache Kafka</span>
+            <span class="tag">REST APIs</span>
+            <span class="tag">Server-Sent Events (SSE)</span>
+            <span class="tag">WebRTC</span>
+            <span class="tag">Ktor</span>
+            <span class="tag">Active/Standby HA</span>
+            <span class="tag">CloudEvents</span>
+          </div>
+        </div>
+
+        <div class="stack-card">
+          <p class="stack-card-title">Systems &amp; Concurrency</p>
+          <div class="tag-list">
+            <span class="tag">Multithreading</span>
+            <span class="tag">Shared-Memory IPC</span>
+            <span class="tag">Distributed Consensus</span>
+            <span class="tag">State Machines</span>
+            <span class="tag">AST Sandboxing</span>
+            <span class="tag">GDB / DBX</span>
+          </div>
+        </div>
+
+        <div class="stack-card">
+          <p class="stack-card-title">Databases &amp; Platforms</p>
+          <div class="tag-list">
+            <span class="tag">In-Memory Kernels</span>
+            <span class="tag">Oracle (OCI / Time-Series)</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">SQL Server</span>
+            <span class="tag">Linux (RHEL / AIX)</span>
+            <span class="tag">CMake / Conan / Gradle</span>
+            <span class="tag">Docker &amp; CI/CD</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION & M.SC. RESEARCH -->
+    <section id="research" class="section">
+      <div class="section-header">
+        <div>
+          <p class="section-kicker">Academic &amp; Open-Source Research</p>
+          <h2 class="section-title">Education &amp; M.Sc. Thesis</h2>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="edu-item">
+          <div class="edu-top">
+            <h3 class="edu-degree">M.Sc. in Computer Engineering — Ege University</h3>
+            <span class="edu-years">2024 – 2026 (Expected) · İzmir</span>
+          </div>
+          <p class="edu-school">International Computer Institute</p>
+          <p class="edu-note">
+            Thesis research on fault-tolerant distributed protocols and runtime shortcut discovery over lossy networks (Enhanced Twin Discovery Model).
+          </p>
+        </div>
+        <div class="edu-item">
+          <div class="edu-top">
+            <h3 class="edu-degree">B.Sc. in Electrical &amp; Electronics Engineering — TOBB ETÜ</h3>
+            <span class="edu-years">2017 – 2022 · Ankara</span>
+          </div>
+          <p class="edu-school">TOBB University of Economics and Technology</p>
+          <p class="edu-note">
+            Engineering curriculum covering embedded systems, signal processing, computer architecture, and software engineering co-ops.
+          </p>
+        </div>
+      </div>
+
+      <!-- M.Sc. Research + etdmnet Open-Source Implementation -->
       <article class="project-featured">
         <div class="project-featured-body">
-          <p class="eyebrow">Open Source (Apache 2.0) &amp; M.Sc. Research</p>
-          <h3 class="section-title">etdmnet &amp; ETDM Protocol</h3>
+          <p class="eyebrow">M.Sc. Thesis &amp; Open-Source Library (Apache 2.0)</p>
+          <h3 class="section-title">etdmnet &amp; ETDM Distributed Protocol</h3>
           <p class="card-desc">
-            Multi-module Kotlin/WebRTC P2P library (~1 KB signaling handshake, automatic EWMA host migration) translating M.Sc. research that achieves up to 67.4% faster convergence over lossy networks.
+            Open-source multi-module Kotlin library implementing relay-free peer-to-peer communication over WebRTC DataChannels, with Ktor WebSocket signaling, EWMA link-quality scoring, and automatic host migration — built alongside my M.Sc. thesis simulation suite in Python.
           </p>
           <div class="tag-list">
             <span class="tag">Kotlin / JVM</span>
             <span class="tag">Android</span>
-            <span class="tag">WebRTC</span>
+            <span class="tag">WebRTC DataChannels</span>
             <span class="tag">Ktor</span>
-            <span class="tag">Distributed Consensus</span>
+            <span class="tag">Python Simulation</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/SqLkk/etdmnet" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">GitHub Repository ↗</a>
-            <a href="thesis.html" class="btn btn-secondary btn-sm">Thesis &amp; Benchmarks →</a>
-            <a href="https://github.com/SqLkk/etdmnet/releases" target="_blank" rel="noopener noreferrer" class="inline-link">Releases ↗</a>
+            <a href="https://github.com/SqLkk/etdmnet" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">etdmnet on GitHub ↗</a>
+            <a href="thesis.html" class="btn btn-secondary btn-sm">Thesis Model &amp; Details →</a>
           </div>
         </div>
 
@@ -250,15 +339,12 @@
                 <rect x="10" y="12" width="244" height="246" rx="8" class="svg-box" />
                 <text x="22" y="34" class="svg-label">Lossy Ring + Twin Shortcuts</text>
 
-                <!-- Ring Perimeter Edges -->
                 <polygon points="132,58 188,82 212,138 188,194 132,216 76,194 52,138 76,82" class="svg-edge" />
 
-                <!-- Twin Shortcut Links -->
                 <line x1="132" y1="58" x2="132" y2="216" class="svg-shortcut" />
                 <line x1="52" y1="138" x2="212" y2="138" class="svg-shortcut" />
                 <line x1="76" y1="82" x2="188" y2="194" class="svg-shortcut" />
 
-                <!-- Ring Nodes -->
                 <circle cx="132" cy="58" r="11" class="svg-node-twin" />
                 <circle cx="188" cy="82" r="9" class="svg-node" />
                 <circle cx="212" cy="138" r="11" class="svg-node-twin" />
@@ -270,30 +356,39 @@
 
                 <text x="128" y="62" class="svg-accent-text">u</text>
                 <text x="128" y="220" class="svg-accent-text">v</text>
-                <text x="22" y="246" class="svg-sublabel">Diameter halved: n/2 → ~n/4 hops</text>
+                <text x="22" y="246" class="svg-sublabel">Runtime non-neighbor bridge discovery</text>
 
-                <!-- Right Column: Runtime Stack Cards -->
                 <rect x="266" y="12" width="200" height="72" rx="8" class="svg-box-accent" />
-                <text x="278" y="34" class="svg-accent-text">WEBRTC P2P DATACHANNEL</text>
-                <text x="278" y="54" class="svg-label">~1 KB SDP Handshake</text>
+                <text x="278" y="34" class="svg-accent-text">WEBRTC DATACHANNEL</text>
+                <text x="278" y="54" class="svg-label">Direct P2P Transport</text>
                 <text x="278" y="72" class="svg-sublabel">Ktor WS Signaling + TURN</text>
 
                 <rect x="266" y="96" width="200" height="72" rx="8" class="svg-box" />
                 <text x="278" y="118" class="svg-label">EWMA Host Election</text>
-                <text x="278" y="138" class="svg-sublabel">3-Way Handshake Lock</text>
-                <text x="278" y="156" class="svg-sublabel">Zero-Relay Migration</text>
+                <text x="278" y="138" class="svg-sublabel">3-Way Nonce Handshake</text>
+                <text x="278" y="156" class="svg-sublabel">Automatic Host Failover</text>
 
                 <rect x="266" y="180" width="200" height="78" rx="8" class="svg-box-green" />
-                <text x="278" y="202" class="svg-green-text">EMPIRICAL BENCHMARK</text>
-                <text x="278" y="222" class="svg-label">67.4% Faster Consensus</text>
-                <text x="278" y="240" class="svg-sublabel">N=50 Ring · 6 Problems</text>
+                <text x="278" y="202" class="svg-green-text">OPEN-SOURCE MODULES</text>
+                <text x="278" y="222" class="svg-label">JVM &amp; Android SDK</text>
+                <text x="278" y="240" class="svg-sublabel">JitPack · GitHub Packages</text>
               </svg>
             </div>
           </div>
         </div>
       </article>
+    </section>
 
-      <!-- 2x2 Visual Showcase Grid -->
+    <!-- EXTRA TOOLS & SIDE PROJECTS (BOTTOM) -->
+    <section id="tools" class="section">
+      <div class="section-header">
+        <div>
+          <p class="section-kicker">Side Projects &amp; Tooling</p>
+          <h2 class="section-title">Additional Tools &amp; Applications</h2>
+        </div>
+        <p class="section-meta">Independent products, desktop utilities &amp; UI demos</p>
+      </div>
+
       <div class="project-grid">
         <!-- Nova -->
         <article class="project-card">
@@ -348,9 +443,9 @@
           </div>
 
           <div class="project-card-body">
-            <h3 class="card-title">Nova — Manufacturing &amp; Enterprise BI SaaS</h3>
+            <h3 class="card-title">Nova — Industrial BI &amp; Smart-Factory SaaS</h3>
             <p class="card-desc">
-              Co-architected commercial analytics SaaS for smart-factory telemetry, interactive topology maps, and automated template-driven reporting.
+              Co-architected web-based business intelligence platform for manufacturing telemetry, interactive plant topology maps, and template-driven reporting.
             </p>
             <div class="tag-list">
               <span class="tag">TypeScript</span>
@@ -364,7 +459,7 @@
           </div>
         </article>
 
-        <!-- Operational Analytics & Reporting UI -->
+        <!-- Operational Reporting & Telemetry UI -->
         <article class="project-card">
           <div class="window-frame">
             <div class="window-bar">
@@ -386,9 +481,9 @@
           </div>
 
           <div class="project-card-body">
-            <h3 class="card-title">Grid Operational Reporting &amp; Telemetry UI</h3>
+            <h3 class="card-title">Operational Reporting &amp; Telemetry UI</h3>
             <p class="card-desc">
-              Power quality dashboards, interactive topology views, and scheduled PDF/Excel automation backed by real-time and Oracle time-series engines.
+              Web interface for power-quality monitoring, network topology visualization, and scheduled PDF/Excel report generation.
             </p>
             <div class="tag-list">
               <span class="tag">Python</span>
@@ -396,7 +491,7 @@
               <span class="tag">Oracle</span>
             </div>
             <div class="project-links">
-              <a href="advanced-reports.html" class="inline-link">Case Study &amp; Screenshots →</a>
+              <a href="advanced-reports.html" class="inline-link">Screenshots &amp; Overview →</a>
               <a href="https://sqlkk.github.io/advanced_reports_stage" target="_blank" rel="noopener noreferrer" class="inline-link">Live Demo ↗</a>
             </div>
           </div>
@@ -426,7 +521,7 @@
           <div class="project-card-body">
             <h3 class="card-title">Database Report Studio</h3>
             <p class="card-desc">
-              Cross-platform Electron desktop workspace for Oracle schema exploration, visual SQL composition, and multi-format HTML/XLSX/Markdown exports.
+              Desktop Electron utility for browsing Oracle schemas, managing saved SQL queries, and exporting reports to HTML, Excel, and Markdown.
             </p>
             <div class="tag-list">
               <span class="tag">Electron</span>
@@ -434,7 +529,7 @@
               <span class="tag">Oracle SQL</span>
             </div>
             <div class="project-links">
-              <a href="project_y.html" class="inline-link">Case Study &amp; Screenshots →</a>
+              <a href="project_y.html" class="inline-link">Screenshots &amp; Overview →</a>
               <a href="https://sqlkk.github.io/project_y_stage" target="_blank" rel="noopener noreferrer" class="inline-link">Live Demo ↗</a>
             </div>
           </div>
@@ -464,7 +559,7 @@
           <div class="project-card-body">
             <h3 class="card-title">Marketplace Operations Hub</h3>
             <p class="card-desc">
-              Unified multi-channel reporting, ad ROI tracking, and catalog synchronization workspace across Amazon, eBay, and Walmart APIs.
+              Multi-channel reporting and catalog workspace integrating Amazon, eBay, and Walmart seller APIs across web and mobile views.
             </p>
             <div class="tag-list">
               <span class="tag">Angular</span>
@@ -472,14 +567,14 @@
               <span class="tag">REST APIs</span>
             </div>
             <div class="project-links">
-              <a href="project_x.html" class="inline-link">Case Study &amp; Screenshots →</a>
+              <a href="project_x.html" class="inline-link">Screenshots &amp; Overview →</a>
               <a href="https://sqlkk.github.io/project_x_stage" target="_blank" rel="noopener noreferrer" class="inline-link">Live Demo ↗</a>
             </div>
           </div>
         </article>
       </div>
 
-      <!-- Compact Full-Width Strip: 17 Acar -->
+      <!-- Compact Strip: 17 Acar -->
       <article class="project-strip">
         <div class="window-frame">
           <button type="button"
@@ -498,7 +593,7 @@
             <span class="role-badge">Google Play · Closed Testing</span>
           </div>
           <p class="card-desc">
-            Real-time online multiplayer board game built with Kotlin Multiplatform, Compose Multiplatform, and a custom Ktor WebSocket relay server.
+            Online multiplayer mobile and desktop game developed as a side project using Kotlin Multiplatform, Compose Multiplatform, and a custom Ktor relay server.
           </p>
           <div class="tag-list">
             <span class="tag">Kotlin Multiplatform</span>
@@ -508,69 +603,6 @@
           </div>
         </div>
       </article>
-    </section>
-
-    <!-- EDUCATION & TECHNICAL STACK -->
-    <section id="background" class="section">
-      <div class="section-header">
-        <div>
-          <p class="section-kicker">Background</p>
-          <h2 class="section-title">Education &amp; Technical Stack</h2>
-        </div>
-      </div>
-
-      <div class="background-grid">
-        <div class="panel">
-          <p class="panel-title">Education</p>
-          <div class="edu-item">
-            <div class="edu-top">
-              <h3 class="edu-degree">M.Sc. in Computer Engineering</h3>
-              <span class="edu-years">2024 – 2026 (Expected)</span>
-            </div>
-            <p class="edu-school">Ege University, International Computer Institute</p>
-            <p class="edu-note">
-              Thesis: Enhanced Twin Discovery Model (ETDM) in Lossy Networks —
-              <a href="thesis.html" class="inline-link">View research →</a>
-            </p>
-          </div>
-          <div class="edu-item">
-            <div class="edu-top">
-              <h3 class="edu-degree">B.Sc. in Electrical &amp; Electronics Engineering</h3>
-              <span class="edu-years">2017 – 2022</span>
-            </div>
-            <p class="edu-school">TOBB University of Economics and Technology</p>
-            <p class="edu-note">
-              Full-time Co-ops: Siemens Smart Grid Systems &amp; TOBB ETÜ Deep Learning Research Lab.
-            </p>
-          </div>
-        </div>
-
-        <div class="panel">
-          <p class="panel-title">Technical Stack</p>
-          <div class="stack-rows">
-            <div class="stack-row">
-              <span class="stack-key">Languages</span>
-              <span class="stack-val">C, C++ (C++17/20), Python, Kotlin, Java, TypeScript, SQL (PL/SQL), Bash</span>
-            </div>
-            <div class="stack-row">
-              <span class="stack-key">Distributed</span>
-              <span class="stack-val">Apache Kafka, REST APIs, SSE, WebRTC, Ktor, Active/Standby HA, CloudEvents</span>
-            </div>
-            <div class="stack-row">
-              <span class="stack-key">Systems</span>
-              <span class="stack-val">Multithreading, Shared-Memory IPC, Distributed Consensus, State Machines, AST Sandboxing</span>
-            </div>
-            <div class="stack-row">
-              <span class="stack-key">Databases</span>
-              <span class="stack-val">In-Memory Real-Time Kernels, Oracle (OCI, PL/SQL, Time-Series), PostgreSQL, SQL Server, SQLite</span>
-            </div>
-            <div class="stack-row">
-              <span class="stack-key">Platforms</span>
-              <span class="stack-val">Linux/UNIX (RHEL, AIX), CMake, Conan, Gradle, Docker, CI/CD, GDB, DBX, IEC 62443</span>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
   </main>
 

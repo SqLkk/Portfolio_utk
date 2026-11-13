@@ -47,31 +47,12 @@
       <p class="eyebrow">M.Sc. Thesis Research · Ege University (2024 – 2026)</p>
       <h1 class="hero-title">Enhanced Twin Discovery Model (ETDM)</h1>
       <p class="hero-summary">
-        Runtime discovery of low-loss twin shortcuts to accelerate classical distributed algorithms over lossy networks without prior topology knowledge.
+        A distributed protocol layer that discovers low-loss non-neighbor shortcuts at runtime to accelerate classical distributed algorithms over lossy networks without prior topology knowledge.
       </p>
       <div class="cta-group">
         <a href="https://github.com/SqLkk/etdmnet" target="_blank" rel="noopener noreferrer" class="btn btn-primary">etdmnet Library (GitHub) ↗</a>
-        <a href="#benchmarks" class="btn btn-secondary">Empirical Benchmarks</a>
-        <a href="index.html" class="btn btn-ghost">← Back to Portfolio</a>
-      </div>
-
-      <div class="metrics-strip" aria-label="Thesis benchmark highlights">
-        <div class="metric-cell">
-          <p class="metric-value">67.4%</p>
-          <p class="metric-label">Peak Consensus Speedup (N=50)</p>
-        </div>
-        <div class="metric-cell">
-          <p class="metric-value">25.4%</p>
-          <p class="metric-label">Avg. Consensus Speedup</p>
-        </div>
-        <div class="metric-cell">
-          <p class="metric-value">12.8%</p>
-          <p class="metric-label">Avg. Leader Election Speedup</p>
-        </div>
-        <div class="metric-cell">
-          <p class="metric-value">~15,000 LoC</p>
-          <p class="metric-label">Deterministic Simulation Suite</p>
-        </div>
+        <a href="#formal" class="btn btn-secondary">Formal Model</a>
+        <a href="#benchmarks" class="btn btn-ghost">Simulation Results</a>
       </div>
     </div>
   </section>
@@ -282,20 +263,19 @@
           <table class="data-table">
             <thead>
               <tr>
-                <th>Config</th>
+                <th>Configuration</th>
                 <th>Classic (rounds)</th>
                 <th>ETDM (rounds)</th>
-                <th>Speedup</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td>N=10</td><td>14.3</td><td>13.2</td><td><span class="delta-pos">+7.7%</span></td></tr>
-              <tr><td>N=20</td><td>47.3</td><td>38.0</td><td><span class="delta-pos">+19.7%</span></td></tr>
-              <tr><td>N=30</td><td>107.4</td><td>63.3</td><td><span class="delta-pos">+41.1%</span></td></tr>
-              <tr><td>N=40</td><td>189.5</td><td>76.8</td><td><span class="delta-pos">+59.5%</span></td></tr>
-              <tr><td>N=50</td><td>255.2</td><td>83.2</td><td><span class="delta-pos">+67.4%</span></td></tr>
-              <tr><td>Loss=15%</td><td>44.9</td><td>23.7</td><td><span class="delta-pos">+47.2%</span></td></tr>
-              <tr><td>Loss=40%</td><td>47.0</td><td>30.3</td><td><span class="delta-pos">+35.6%</span></td></tr>
+              <tr><td>Ring · N=10</td><td>14.3</td><td>13.2</td></tr>
+              <tr><td>Ring · N=20</td><td>47.3</td><td>38.0</td></tr>
+              <tr><td>Ring · N=30</td><td>107.4</td><td>63.3</td></tr>
+              <tr><td>Ring · N=40</td><td>189.5</td><td>76.8</td></tr>
+              <tr><td>Ring · N=50</td><td>255.2</td><td>83.2</td></tr>
+              <tr><td>Loss Rate = 0.15</td><td>44.9</td><td>23.7</td></tr>
+              <tr><td>Loss Rate = 0.40</td><td>47.0</td><td>30.3</td></tr>
             </tbody>
           </table>
         </div>
@@ -305,19 +285,18 @@
           <table class="data-table">
             <thead>
               <tr>
-                <th>Loss Rate</th>
+                <th>Channel Loss</th>
                 <th>Classic (rounds)</th>
                 <th>ETDM (rounds)</th>
-                <th>Speedup</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td>0%</td><td>10.0</td><td>9.1</td><td><span class="delta-pos">+9.3%</span></td></tr>
-              <tr><td>5%</td><td>10.5</td><td>9.1</td><td><span class="delta-pos">+13.4%</span></td></tr>
-              <tr><td>10%</td><td>10.7</td><td>9.3</td><td><span class="delta-pos">+13.0%</span></td></tr>
-              <tr><td>20%</td><td>11.9</td><td>10.3</td><td><span class="delta-pos">+12.9%</span></td></tr>
-              <tr><td>30%</td><td>13.5</td><td>11.7</td><td><span class="delta-pos">+12.9%</span></td></tr>
-              <tr><td>40%</td><td>16.0</td><td>14.7</td><td><span class="delta-pos">+8.3%</span></td></tr>
+              <tr><td>0.00</td><td>10.0</td><td>9.1</td></tr>
+              <tr><td>0.05</td><td>10.5</td><td>9.1</td></tr>
+              <tr><td>0.10</td><td>10.7</td><td>9.3</td></tr>
+              <tr><td>0.20</td><td>11.9</td><td>10.3</td></tr>
+              <tr><td>0.30</td><td>13.5</td><td>11.7</td></tr>
+              <tr><td>0.40</td><td>16.0</td><td>14.7</td></tr>
             </tbody>
           </table>
         </div>
@@ -329,45 +308,45 @@
               <tr>
                 <th>Problem</th>
                 <th>Algorithm Class</th>
-                <th>Behavior with ETDM</th>
-                <th>Outcome</th>
+                <th>Observed Behavior with ETDM</th>
+                <th>Effect</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td class="text-col">Binary Consensus</td>
                 <td class="text-col">Global averaging diffusion</td>
-                <td class="text-col">Twin bridges sharply reduce Ring mixing time</td>
-                <td><span class="delta-pos">+25.4% avg</span></td>
+                <td class="text-col">Twin bridges reduce effective mixing diameter on Ring topologies</td>
+                <td><span class="delta-pos">Accelerated</span></td>
               </tr>
               <tr>
                 <td class="text-col">Leader Election</td>
                 <td class="text-col">Global max-ID flooding</td>
-                <td class="text-col">Shortcuts propagate maximum ID across diameter</td>
-                <td><span class="delta-pos">+12.8% avg</span></td>
+                <td class="text-col">Shortcuts propagate maximum identifier across distant segments</td>
+                <td><span class="delta-pos">Accelerated</span></td>
               </tr>
               <tr>
                 <td class="text-col">BFS Spanning Tree</td>
                 <td class="text-col">Global tree construction</td>
-                <td class="text-col">Produces shallower trees with extra discovery rounds</td>
-                <td><span class="delta-mix">Quality ↑ / Speed ↓</span></td>
+                <td class="text-col">Produces shallower trees at the cost of discovery rounds</td>
+                <td><span class="delta-mix">Depth ↓ / Rounds ↑</span></td>
               </tr>
               <tr>
                 <td class="text-col">Vertex Cover</td>
                 <td class="text-col">Neighborhood optimization</td>
-                <td class="text-col">Slightly smaller covers with marginal round trade-off</td>
-                <td><span class="delta-mix">Mixed</span></td>
+                <td class="text-col">Slightly smaller covers with minor round overhead</td>
+                <td><span class="delta-mix">Trade-off</span></td>
               </tr>
               <tr>
                 <td class="text-col">Maximal Independent Set</td>
                 <td class="text-col">Local symmetry breaking</td>
-                <td class="text-col">Inherently local; global shortcuts unused</td>
+                <td class="text-col">Strictly local decisions; non-neighbor shortcuts unused</td>
                 <td><span class="delta-neu">Neutral</span></td>
               </tr>
               <tr>
                 <td class="text-col">Vertex Coloring</td>
                 <td class="text-col">Deterministic local coloring</td>
-                <td class="text-col">Converges identically to baseline</td>
+                <td class="text-col">Converges identically to classical baseline</td>
                 <td><span class="delta-neu">Neutral</span></td>
               </tr>
             </tbody>
