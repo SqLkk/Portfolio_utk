@@ -40,20 +40,54 @@
     </nav>
   </header>
 
-  <main class="container">
-    <!-- HERO -->
-    <section class="hero">
-      <p class="eyebrow">Siemens Grid Software R&amp;D · Bratislava, Slovakia</p>
-      <h1 class="hero-title">Utku Karaca</h1>
-      <p class="hero-role">Software Engineer — Distributed Systems, C++ &amp; Backend Infrastructure</p>
-      <p class="hero-summary">
-        Architecting high-throughput C++ event gateways, real-time operational data platforms, and fault-tolerant distributed protocols for mission-critical infrastructure.
-      </p>
-      <div class="cta-group">
-        <a href="uk_resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Resume (PDF) ↗</a>
-        <a href="https://github.com/SqLkk" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">GitHub ↗</a>
-        <a href="mailto:utkukaraca.sql@gmail.com" class="btn btn-secondary">Send Email ↗</a>
-        <a href="https://leetcode.com/u/ankok/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">LeetCode ↗</a>
+  <section class="hero-band">
+    <div class="container hero">
+      <div class="hero-grid">
+        <div>
+          <div class="status-pill">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>Siemens Grid Software R&amp;D · Bratislava, Slovakia</span>
+          </div>
+          <h1 class="hero-title">Utku Karaca</h1>
+          <p class="hero-role">Distributed Systems, C++ &amp; Backend Infrastructure Engineer</p>
+          <p class="hero-summary">
+            Building high-throughput C++ event gateways, 0-to-1 real-time operational analytics platforms, and fault-tolerant distributed protocols for live power grids.
+          </p>
+          <div class="cta-group">
+            <a href="uk_resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Resume (PDF) ↗</a>
+            <a href="https://github.com/SqLkk" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">GitHub ↗</a>
+            <a href="mailto:utkukaraca.sql@gmail.com" class="btn btn-secondary">Send Email ↗</a>
+            <a href="https://leetcode.com/u/ankok/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">LeetCode ↗</a>
+          </div>
+        </div>
+
+        <aside class="hero-showcase" aria-label="Systems focus overview">
+          <div class="showcase-bar">
+            <span class="window-dots" aria-hidden="true">
+              <span class="window-dot"></span>
+              <span class="window-dot"></span>
+              <span class="window-dot"></span>
+            </span>
+            <span class="showcase-title">systems-overview :: production &amp; research</span>
+          </div>
+          <div class="showcase-body">
+            <div class="showcase-item">
+              <p class="showcase-kicker">Core Infrastructure</p>
+              <p class="showcase-val">C++17/20 Event Gateways &amp; Shared-Memory Daemons</p>
+              <p class="showcase-sub">Apache Kafka · REST / SSE · RHEL &amp; AIX Clusters</p>
+            </div>
+            <div class="showcase-item">
+              <p class="showcase-kicker">0-to-1 Platform Ownership</p>
+              <p class="showcase-val">Real-Time Grid Analytics &amp; Active/Standby HA</p>
+              <p class="showcase-sub">Python AST Engine · Oracle Time-Series · IEC 62443</p>
+            </div>
+            <div class="showcase-item">
+              <p class="showcase-kicker">Distributed Research &amp; OSS</p>
+              <p class="showcase-val">etdmnet (WebRTC P2P) &amp; Lossy-Network Consensus</p>
+              <p class="showcase-sub">Kotlin Multiplatform · M.Sc. Thesis @ Ege Univ.</p>
+            </div>
+          </div>
+        </aside>
       </div>
 
       <div class="metrics-strip" aria-label="Career highlights">
@@ -74,7 +108,10 @@
           <p class="metric-label">Lossy-Ring Consensus Speedup</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
+
+  <main class="container">
 
     <!-- EXPERIENCE -->
     <section id="work" class="section">
@@ -209,47 +246,47 @@
           </div>
           <div class="window-viewport">
             <div class="diagram-canvas">
-              <svg viewBox="0 0 460 270" class="diagram-svg" role="img" aria-label="ETDM ring topology with EWMA twin shortcuts and WebRTC DataChannel flow">
-                <rect x="12" y="14" width="236" height="242" rx="8" class="svg-box" />
-                <text x="26" y="34" class="svg-label">Lossy Ring + Twin Shortcuts</text>
+              <svg viewBox="0 0 476 270" class="diagram-svg" role="img" aria-label="ETDM ring topology with EWMA twin shortcuts and WebRTC DataChannel flow">
+                <rect x="10" y="12" width="244" height="246" rx="8" class="svg-box" />
+                <text x="22" y="34" class="svg-label">Lossy Ring + Twin Shortcuts</text>
 
                 <!-- Ring Perimeter Edges -->
-                <polygon points="130,58 186,82 210,138 186,194 130,218 74,194 50,138 74,82" class="svg-edge" />
+                <polygon points="132,58 188,82 212,138 188,194 132,216 76,194 52,138 76,82" class="svg-edge" />
 
                 <!-- Twin Shortcut Links -->
-                <line x1="130" y1="58" x2="130" y2="218" class="svg-shortcut" />
-                <line x1="50" y1="138" x2="210" y2="138" class="svg-shortcut" />
-                <line x1="74" y1="82" x2="186" y2="194" class="svg-shortcut" />
+                <line x1="132" y1="58" x2="132" y2="216" class="svg-shortcut" />
+                <line x1="52" y1="138" x2="212" y2="138" class="svg-shortcut" />
+                <line x1="76" y1="82" x2="188" y2="194" class="svg-shortcut" />
 
                 <!-- Ring Nodes -->
-                <circle cx="130" cy="58" r="11" class="svg-node-twin" />
-                <circle cx="186" cy="82" r="9" class="svg-node" />
-                <circle cx="210" cy="138" r="11" class="svg-node-twin" />
-                <circle cx="186" cy="194" r="11" class="svg-node-twin" />
-                <circle cx="130" cy="218" r="11" class="svg-node-twin" />
-                <circle cx="74" cy="194" r="9" class="svg-node" />
-                <circle cx="50" cy="138" r="11" class="svg-node-twin" />
-                <circle cx="74" cy="82" r="11" class="svg-node-twin" />
+                <circle cx="132" cy="58" r="11" class="svg-node-twin" />
+                <circle cx="188" cy="82" r="9" class="svg-node" />
+                <circle cx="212" cy="138" r="11" class="svg-node-twin" />
+                <circle cx="188" cy="194" r="11" class="svg-node-twin" />
+                <circle cx="132" cy="216" r="11" class="svg-node-twin" />
+                <circle cx="76" cy="194" r="9" class="svg-node" />
+                <circle cx="52" cy="138" r="11" class="svg-node-twin" />
+                <circle cx="76" cy="82" r="11" class="svg-node-twin" />
 
-                <text x="126" y="62" class="svg-accent-text">u</text>
-                <text x="126" y="222" class="svg-accent-text">v</text>
-                <text x="26" y="244" class="svg-sublabel">Diameter halved: n/2 → ~n/4 hops</text>
+                <text x="128" y="62" class="svg-accent-text">u</text>
+                <text x="128" y="220" class="svg-accent-text">v</text>
+                <text x="22" y="246" class="svg-sublabel">Diameter halved: n/2 → ~n/4 hops</text>
 
                 <!-- Right Column: Runtime Stack Cards -->
-                <rect x="264" y="14" width="184" height="68" rx="8" class="svg-box-accent" />
-                <text x="278" y="37" class="svg-accent-text">WEBRTC P2P DATACHANNEL</text>
-                <text x="278" y="55" class="svg-label">~1 KB SDP/ICE Handshake</text>
-                <text x="278" y="71" class="svg-sublabel">Ktor WS Signaling + TURN</text>
+                <rect x="266" y="12" width="200" height="72" rx="8" class="svg-box-accent" />
+                <text x="278" y="34" class="svg-accent-text">WEBRTC P2P DATACHANNEL</text>
+                <text x="278" y="54" class="svg-label">~1 KB SDP Handshake</text>
+                <text x="278" y="72" class="svg-sublabel">Ktor WS Signaling + TURN</text>
 
-                <rect x="264" y="96" width="184" height="68" rx="8" class="svg-box" />
-                <text x="278" y="119" class="svg-label">EWMA Host Election</text>
-                <text x="278" y="137" class="svg-sublabel">3-Way Handshake Lock</text>
-                <text x="278" y="153" class="svg-sublabel">Zero-Relay Migration</text>
+                <rect x="266" y="96" width="200" height="72" rx="8" class="svg-box" />
+                <text x="278" y="118" class="svg-label">EWMA Host Election</text>
+                <text x="278" y="138" class="svg-sublabel">3-Way Handshake Lock</text>
+                <text x="278" y="156" class="svg-sublabel">Zero-Relay Migration</text>
 
-                <rect x="264" y="178" width="184" height="78" rx="8" class="svg-box-green" />
-                <text x="278" y="201" class="svg-green-text">EMPIRICAL BENCHMARK</text>
-                <text x="278" y="221" class="svg-label">67.4% Faster Consensus</text>
-                <text x="278" y="239" class="svg-sublabel">N=50 Ring · 6 Problems</text>
+                <rect x="266" y="180" width="200" height="78" rx="8" class="svg-box-green" />
+                <text x="278" y="202" class="svg-green-text">EMPIRICAL BENCHMARK</text>
+                <text x="278" y="222" class="svg-label">67.4% Faster Consensus</text>
+                <text x="278" y="240" class="svg-sublabel">N=50 Ring · 6 Problems</text>
               </svg>
             </div>
           </div>
@@ -271,40 +308,40 @@
             </div>
             <div class="window-viewport">
               <div class="diagram-canvas">
-                <svg viewBox="0 0 440 260" class="diagram-svg" role="img" aria-label="Nova industrial BI SaaS pipeline architecture">
-                  <rect x="16" y="22" width="118" height="216" rx="8" class="svg-box" />
-                  <text x="28" y="46" class="svg-accent-text">INGESTION</text>
-                  <rect x="28" y="64" width="94" height="36" rx="5" class="svg-box" />
-                  <text x="38" y="86" class="svg-label">OPC-UA / PLC</text>
-                  <rect x="28" y="112" width="94" height="36" rx="5" class="svg-box" />
-                  <text x="38" y="134" class="svg-label">Oracle / PG</text>
-                  <rect x="28" y="160" width="94" height="36" rx="5" class="svg-box" />
-                  <text x="38" y="182" class="svg-label">MSSQL / REST</text>
-                  <text x="28" y="220" class="svg-sublabel">Multi-Source ETL</text>
+                <svg viewBox="0 0 476 260" class="diagram-svg" role="img" aria-label="Nova industrial BI SaaS pipeline architecture">
+                  <rect x="12" y="18" width="132" height="224" rx="8" class="svg-box" />
+                  <text x="24" y="42" class="svg-accent-text">INGESTION</text>
+                  <rect x="24" y="58" width="108" height="38" rx="5" class="svg-box" />
+                  <text x="34" y="82" class="svg-label">OPC-UA / PLC</text>
+                  <rect x="24" y="108" width="108" height="38" rx="5" class="svg-box" />
+                  <text x="34" y="132" class="svg-label">Oracle / PG</text>
+                  <rect x="24" y="158" width="108" height="38" rx="5" class="svg-box" />
+                  <text x="34" y="182" class="svg-label">MSSQL / REST</text>
+                  <text x="24" y="224" class="svg-sublabel">Multi-Source ETL</text>
 
-                  <line x1="134" y1="130" x2="158" y2="130" class="svg-flow-green" />
+                  <line x1="144" y1="130" x2="164" y2="130" class="svg-flow-green" />
 
-                  <rect x="158" y="22" width="132" height="216" rx="8" class="svg-box-accent" />
-                  <text x="170" y="46" class="svg-accent-text">CORE ENGINE</text>
-                  <rect x="170" y="64" width="108" height="48" rx="5" class="svg-box" />
-                  <text x="180" y="85" class="svg-label">OEE &amp; KPIs</text>
-                  <text x="180" y="101" class="svg-sublabel">Shift Aggregation</text>
-                  <rect x="170" y="126" width="108" height="48" rx="5" class="svg-box" />
-                  <text x="180" y="147" class="svg-label">Space Map</text>
-                  <text x="180" y="163" class="svg-sublabel">Plant Topology</text>
-                  <text x="170" y="220" class="svg-sublabel">Python + Angular</text>
+                  <rect x="164" y="18" width="148" height="224" rx="8" class="svg-box-accent" />
+                  <text x="176" y="42" class="svg-accent-text">CORE ENGINE</text>
+                  <rect x="176" y="58" width="124" height="54" rx="5" class="svg-box" />
+                  <text x="186" y="81" class="svg-label">OEE &amp; KPIs</text>
+                  <text x="186" y="99" class="svg-sublabel">Shift Aggregation</text>
+                  <rect x="176" y="126" width="124" height="54" rx="5" class="svg-box" />
+                  <text x="186" y="149" class="svg-label">Space Map</text>
+                  <text x="186" y="167" class="svg-sublabel">Plant Topology</text>
+                  <text x="176" y="224" class="svg-sublabel">Python + Angular</text>
 
-                  <line x1="290" y1="130" x2="314" y2="130" class="svg-flow-green" />
+                  <line x1="312" y1="130" x2="332" y2="130" class="svg-flow-green" />
 
-                  <rect x="314" y="22" width="110" height="216" rx="8" class="svg-box-green" />
-                  <text x="326" y="46" class="svg-green-text">OUTPUTS</text>
-                  <rect x="326" y="64" width="86" height="48" rx="5" class="svg-box" />
-                  <text x="334" y="85" class="svg-label">Template</text>
-                  <text x="334" y="101" class="svg-sublabel">Builder UI</text>
-                  <rect x="326" y="126" width="86" height="48" rx="5" class="svg-box" />
-                  <text x="334" y="147" class="svg-label">PDF / XLSX</text>
-                  <text x="334" y="163" class="svg-sublabel">Live Exports</text>
-                  <text x="326" y="220" class="svg-sublabel">On-Prem / SaaS</text>
+                  <rect x="332" y="18" width="132" height="224" rx="8" class="svg-box-green" />
+                  <text x="344" y="42" class="svg-green-text">OUTPUTS</text>
+                  <rect x="344" y="58" width="108" height="54" rx="5" class="svg-box" />
+                  <text x="354" y="81" class="svg-label">Template</text>
+                  <text x="354" y="99" class="svg-sublabel">Builder UI</text>
+                  <rect x="344" y="126" width="108" height="54" rx="5" class="svg-box" />
+                  <text x="354" y="149" class="svg-label">PDF / XLSX</text>
+                  <text x="354" y="167" class="svg-sublabel">Live Exports</text>
+                  <text x="344" y="224" class="svg-sublabel">On-Prem / SaaS</text>
                 </svg>
               </div>
             </div>
