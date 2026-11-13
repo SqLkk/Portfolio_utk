@@ -3,572 +3,562 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Utku Karaca | Software Developer</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
-    body { font-family: 'Manrope', sans-serif; }
-    h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.02em; }
-    html { scroll-behavior: smooth; }
-  </style>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none';" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <!-- TODO(security): HTTP response headers X-Frame-Options, CSP frame-ancestors, Permissions-Policy, and X-Content-Type-Options: nosniff are controlled by GitHub Pages static hosting and cannot be set via HTML meta tags. -->
+  <title>Utku Karaca — Software Engineer (Distributed Systems, C++ &amp; Backend)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
 </head>
-<body class="bg-slate-950 text-slate-100">
-
-  <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
-    <div class="absolute -top-32 -left-32 h-[500px] w-[500px] rounded-full bg-cyan-500/10 blur-3xl"></div>
-    <div class="absolute top-1/3 -right-32 h-96 w-96 rounded-full bg-sky-500/10 blur-3xl"></div>
-    <div class="absolute bottom-1/4 left-1/3 h-80 w-80 rounded-full bg-indigo-500/8 blur-3xl"></div>
-  </div>
-
-  <!-- NAV -->
-  <nav class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="flex h-16 items-center justify-between">
-        <a href="index.html" class="text-lg font-semibold tracking-tight text-white">Utku Karaca</a>
-        <div class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
-          <a href="#projects"   class="hover:text-white transition">Projects</a>
-          <a href="#about"      class="hover:text-white transition">About</a>
-          <a href="#experience" class="hover:text-white transition">Experience</a>
-          <a href="#education"  class="hover:text-white transition">Education</a>
-          <a href="#contact"    class="hover:text-white transition">Contact</a>
-          <a href="UtkuKaraca_resume.pdf" target="_blank" rel="noopener"
-             class="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-1.5 text-cyan-200 hover:bg-cyan-400/20 transition">Resume ↗</a>
-        </div>
-        <button class="md:hidden text-slate-300 hover:text-white" onclick="document.getElementById('mob').classList.toggle('hidden')">
-          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
-        </button>
-      </div>
-      <div id="mob" class="hidden pb-4 flex flex-col gap-3 text-sm font-medium text-slate-300">
-        <a href="#about"      class="hover:text-white transition">About</a>
-        <a href="#experience" class="hover:text-white transition">Experience</a>
-        <a href="#projects"   class="hover:text-white transition">Projects</a>
-        <a href="#education"  class="hover:text-white transition">Education</a>
-        <a href="#contact"    class="hover:text-white transition">Contact</a>
-        <a href="UtkuKaraca_resume.pdf" target="_blank" rel="noopener" class="text-cyan-200">Resume ↗</a>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <span>Utku Karaca</span>
+        <span class="brand-loc">Bratislava, SK</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#work">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="thesis.html">Research</a>
+        <a href="#background">Background</a>
+      </nav>
+      <div class="header-actions">
+        <button id="theme-toggle" type="button" class="icon-btn" aria-label="Switch to dark theme">Dark</button>
+        <a href="uk_resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Resume (PDF) ↗</a>
+        <button id="menu-toggle" type="button" class="icon-btn menu-toggle" aria-expanded="false" aria-controls="mobile-nav">Menu</button>
       </div>
     </div>
-  </nav>
+    <nav id="mobile-nav" class="container mobile-nav" aria-label="Mobile navigation">
+      <a href="#work">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="thesis.html">Research (ETDM)</a>
+      <a href="#background">Education &amp; Stack</a>
+      <a href="uk_resume.pdf" target="_blank" rel="noopener noreferrer">Resume (PDF) ↗</a>
+    </nav>
+  </header>
 
-  <main class="max-w-7xl mx-auto px-6">
-
+  <main class="container">
     <!-- HERO -->
-    <section class="py-24 lg:py-32 grid gap-12 lg:grid-cols-[1.25fr_0.75fr] lg:items-center">
-      <div>
-        <span class="inline-flex items-center rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-200 mb-6">
-          Open to new opportunities · Bratislava, Slovakia
-        </span>
-        <h1 class="text-5xl font-extrabold tracking-tight text-white sm:text-6xl lg:text-7xl leading-none">
-          Utku<br>
-          <span class="bg-gradient-to-r from-cyan-400 to-sky-500 bg-clip-text text-transparent">Karaca</span>
-        </h1>
-        <p class="mt-5 text-xl font-semibold text-slate-300">Software Developer · Siemens Grid Software</p>
-        <p class="mt-5 max-w-2xl text-base leading-8 text-slate-400">
-          Backend systems engineer and SCADA platform developer with 3+ years at Siemens. I build integration bridges, reporting tools, and distributed infrastructure that power mission-critical operational environments. Currently pursuing an M.Sc. researching distributed algorithms in lossy networks.
-        </p>
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a href="#projects" class="rounded-full bg-cyan-500 px-6 py-3 text-sm font-bold text-slate-950 transition hover:bg-cyan-400 shadow-lg shadow-cyan-500/20">View Projects</a>
-          <a href="#contact"  class="rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10">Contact Me</a>
-          <a href="UtkuKaraca_resume.pdf" target="_blank" rel="noopener" class="rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10">Download CV ↗</a>
-        </div>
-        <div class="mt-8 flex flex-wrap gap-2">
-          <a href="https://github.com/ankokkk" target="_blank" rel="noopener"
-             class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-300 hover:border-white/30 hover:text-white transition">
-            <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
-            GitHub
-          </a>
-          <a href="https://tryhackme.com/p/ankok" target="_blank" rel="noopener"
-             class="inline-flex items-center gap-2 rounded-full border border-red-500/25 bg-red-500/10 px-4 py-2 text-sm text-red-300 hover:border-red-400/50 transition">🎯 TryHackMe</a>
-          <a href="https://leetcode.com/u/ankok/" target="_blank" rel="noopener"
-             class="inline-flex items-center gap-2 rounded-full border border-yellow-500/25 bg-yellow-500/10 px-4 py-2 text-sm text-yellow-300 hover:border-yellow-400/50 transition">⚡ LeetCode</a>
-          <a href="https://www.hackerrank.com/profile/Ankok" target="_blank" rel="noopener"
-             class="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-4 py-2 text-sm text-emerald-300 hover:border-emerald-400/50 transition">✦ HackerRank</a>
-        </div>
+    <section class="hero">
+      <p class="eyebrow">Siemens Grid Software R&amp;D · Bratislava, Slovakia</p>
+      <h1 class="hero-title">Utku Karaca</h1>
+      <p class="hero-role">Software Engineer — Distributed Systems, C++ &amp; Backend Infrastructure</p>
+      <p class="hero-summary">
+        Architecting high-throughput C++ event gateways, real-time operational data platforms, and fault-tolerant distributed protocols for mission-critical infrastructure.
+      </p>
+      <div class="cta-group">
+        <a href="uk_resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Resume (PDF) ↗</a>
+        <a href="https://github.com/SqLkk" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">GitHub ↗</a>
+        <a href="mailto:utkukaraca.sql@gmail.com" class="btn btn-secondary">Send Email ↗</a>
+        <a href="https://leetcode.com/u/ankok/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">LeetCode ↗</a>
       </div>
-      <!-- Stats card -->
-      <div class="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl shadow-black/30 backdrop-blur">
-        <p class="text-xs uppercase tracking-[0.25em] text-slate-400 mb-5">At a glance</p>
-        <div class="grid grid-cols-2 gap-3 mb-3">
-          <div class="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
-            <p class="text-3xl font-bold text-white">3+</p>
-            <p class="text-xs text-slate-400 mt-1">Years at Siemens</p>
-          </div>
-          <div class="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
-            <p class="text-3xl font-bold text-white">M.Sc.</p>
-            <p class="text-xs text-slate-400 mt-1">Computer Engineering (in progress)</p>
-          </div>
-        </div>
-        <div class="rounded-2xl border border-white/10 bg-slate-900/70 p-4">
-          <p class="text-xs uppercase tracking-[0.2em] text-slate-400 mb-2">Stack</p>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="rounded-full bg-cyan-500/15 border border-cyan-500/20 px-2.5 py-0.5 text-xs text-cyan-300">Java</span>
-            <span class="rounded-full bg-cyan-500/15 border border-cyan-500/20 px-2.5 py-0.5 text-xs text-cyan-300">Python</span>
-            <span class="rounded-full bg-cyan-500/15 border border-cyan-500/20 px-2.5 py-0.5 text-xs text-cyan-300">Angular</span>
-            <span class="rounded-full bg-cyan-500/15 border border-cyan-500/20 px-2.5 py-0.5 text-xs text-cyan-300">Oracle DB</span>
-            <span class="rounded-full bg-cyan-500/15 border border-cyan-500/20 px-2.5 py-0.5 text-xs text-cyan-300">REST API</span>
-            <span class="rounded-full bg-cyan-500/15 border border-cyan-500/20 px-2.5 py-0.5 text-xs text-cyan-300">Docker</span>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- ABOUT & SKILLS -->
-          <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Multithreading / IPC</span>
-          <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Reverse Engineering</span>
-          <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Algorithm Design</span>
+      <div class="metrics-strip" aria-label="Career highlights">
+        <div class="metric-cell">
+          <p class="metric-value">~4 Years</p>
+          <p class="metric-label">Siemens Grid R&amp;D</p>
+        </div>
+        <div class="metric-cell">
+          <p class="metric-value">0 → 1</p>
+          <p class="metric-label">Live Grid Analytics Platform</p>
+        </div>
+        <div class="metric-cell">
+          <p class="metric-value">90% Faster</p>
+          <p class="metric-label">25-Yr Binary Data Migration</p>
+        </div>
+        <div class="metric-cell">
+          <p class="metric-value">67.4%</p>
+          <p class="metric-label">Lossy-Ring Consensus Speedup</p>
         </div>
       </div>
     </section>
 
     <!-- EXPERIENCE -->
-    <section id="projects" class="py-20 border-t border-white/10">
-      <p class="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300 mb-2">Projects &amp; Portfolio</p>
-      <h2 class="text-4xl font-bold tracking-tight text-white mb-10">Built &amp; shipped</h2>
-      <div class="grid gap-6 lg:grid-cols-2">
+    <section id="work" class="section">
+      <div class="section-header">
+        <div>
+          <p class="section-kicker">Work Experience</p>
+          <h2 class="section-title">Siemens — Grid Software R&amp;D</h2>
+        </div>
+        <p class="section-meta">Feb 2023 – Present · Bratislava &amp; Ankara</p>
+      </div>
 
-        <!-- THESIS — highlight -->
-        <article class="lg:col-span-2 rounded-3xl border border-purple-500/25 bg-purple-500/5 p-8 shadow-xl transition hover:-translate-y-1 hover:border-purple-400/50">
-          <div class="flex flex-wrap items-start justify-between gap-6">
-            <div class="flex-1 min-w-0">
-              <span class="inline-flex items-center rounded-full border border-purple-400/30 bg-purple-400/10 px-3 py-1 text-xs font-bold text-purple-200">🎓 M.Sc. Thesis · In Progress</span>
-              <h3 class="mt-4 text-2xl font-bold text-white">Enhanced Twin Discovery Model (ETDM)</h3>
-              <p class="mt-3 max-w-3xl text-sm leading-7 text-slate-300">A distributed protocol that discovers hidden twin shortcuts at runtime to accelerate classical distributed algorithms over lossy networks — no prior knowledge required. Achieves up to <strong class="text-purple-200">67.4% faster convergence</strong> on ring topologies vs. classical baselines. Evaluated across 6 distributed problems. ~15,000 lines of Python with a deterministic BLAKE2b loss oracle for full reproducibility.</p>
-              <div class="mt-4 flex flex-wrap gap-2">
-                <span class="rounded-full bg-purple-500/15 px-3 py-1 text-purple-200">Python</span>
-                <span class="rounded-full bg-purple-500/15 px-3 py-1 text-purple-200">Distributed Algorithms</span>
-                <span class="rounded-full bg-purple-500/15 px-3 py-1 text-purple-200">BLAKE2b Loss Oracle</span>
-                <span class="rounded-full bg-purple-500/15 px-3 py-1 text-purple-200">EWMA Scoring</span>
-                <span class="rounded-full bg-purple-500/15 px-3 py-1 text-purple-200">LaTeX / Formal Model</span>
-              </div>
-              <div class="mt-6 flex flex-wrap gap-5 items-center">
-                <a href="thesis.html" class="text-sm font-semibold text-purple-300 hover:text-white transition">View thesis page →</a>
-                <a href="https://github.com/SqLkk/etdmnet" target="_blank" rel="noopener"
-                   class="rounded-full border border-purple-400/30 bg-purple-400/10 px-3 py-1 text-xs font-bold text-purple-200 hover:bg-purple-400/20 transition">etdmnet on GitHub ↗</a>
-              </div>
-            </div>
-            <div class="hidden lg:grid grid-cols-2 gap-3 shrink-0 w-56">
-              <div class="rounded-2xl border border-purple-500/20 bg-purple-500/10 p-4 text-center">
-                <p class="text-2xl font-bold text-purple-200">25.4%</p>
-                <p class="text-xs text-slate-400 mt-1">Avg. consensus speedup</p>
-              </div>
-              <div class="rounded-2xl border border-purple-500/20 bg-purple-500/10 p-4 text-center">
-                <p class="text-2xl font-bold text-purple-200">12.8%</p>
-                <p class="text-xs text-slate-400 mt-1">Leader election speedup</p>
-              </div>
-              <div class="col-span-2 rounded-2xl border border-purple-500/20 bg-purple-500/10 p-4 text-center">
-                <p class="text-2xl font-bold text-purple-200">67.4%</p>
-                <p class="text-xs text-slate-400 mt-1">Peak speedup (N=50, Ring)</p>
-              </div>
+      <div class="work-grid">
+        <article class="work-card">
+          <div class="work-card-top">
+            <h3 class="card-title">Cloud-to-Core Event Gateway</h3>
+            <span class="role-badge">Lead Developer</span>
+          </div>
+          <div class="flow-pill">Cloud SaaS ⇄ Kafka / REST / SSE ⇄ Real-Time Grid Core</div>
+          <p class="card-desc">
+            Architected 4 C++ communication services streaming CloudEvents, real-time alarms, and validated switching sequences with multi-site hot-standby failover.
+          </p>
+          <div class="card-footer">
+            <div class="tag-list">
+              <span class="tag">C++17/20</span>
+              <span class="tag">Apache Kafka</span>
+              <span class="tag">REST / SSE</span>
+              <span class="tag">CloudEvents</span>
             </div>
           </div>
         </article>
 
-        <!-- Advanced Reports -->
-        <article class="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-xl transition hover:-translate-y-1 hover:border-cyan-300/40">
-          <span class="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200">Reporting platform</span>
-          <h3 class="mt-4 text-xl font-bold text-white">Advanced Reports Platform</h3>
-          <p class="mt-3 text-base leading-8 text-slate-300">Automates report generation for operations teams. Produces branded PDF reports and structured Excel exports on demand, with background scheduling, visual network maps, and a clean Angular frontend backed by a Python engine.</p>
-          <div class="mt-4 flex flex-wrap gap-2">
-            <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-cyan-200">Python</span>
-            <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-cyan-200">Angular</span>
-            <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-cyan-200">ReportLab</span>
+        <article class="work-card">
+          <div class="work-card-top">
+            <h3 class="card-title">Operational Analytics Platform</h3>
+            <span class="role-badge">Creator &amp; Sole Owner</span>
           </div>
-          <div class="mt-6 flex flex-wrap gap-5 items-center">
-            <a href="advanced-reports.html" class="text-base font-semibold text-white hover:text-cyan-200 transition">Case study →</a>
-            <a href="https://sqlkk.github.io/advanced_reports_stage" target="_blank" rel="noopener"
-               class="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-bold text-cyan-200 hover:bg-cyan-400/20 transition">Live Demo ↗</a>
+          <div class="flow-pill">Live Telemetry + Oracle Time-Series → Active/Standby HA</div>
+          <p class="card-desc">
+            Built and shipped a 0-to-1 grid analytics platform with sub-second queries, an AST-sandboxed Python engine, topology maps, and IEC 62443 / NIS 2 compliance.
+          </p>
+          <div class="card-footer">
+            <div class="tag-list">
+              <span class="tag">Python</span>
+              <span class="tag">Oracle</span>
+              <span class="tag">Angular</span>
+              <span class="tag">HA Clustering</span>
+            </div>
+            <a href="advanced-reports.html" class="inline-link">Platform Preview →</a>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="work-card-top">
+            <h3 class="card-title">In-Memory Data Kernel &amp; Daemons</h3>
+            <span class="role-badge">Core Platform</span>
+          </div>
+          <div class="flow-pill">Shared-Memory IPC · Multithreading · RHEL / AIX</div>
+          <p class="card-desc">
+            Own low-latency C/C++ runtime daemons and shared-memory kernels powering live control centers, resolving race conditions and IPC deadlocks via GDB/DBX.
+          </p>
+          <div class="card-footer">
+            <div class="tag-list">
+              <span class="tag">C / C++</span>
+              <span class="tag">Shared-Memory IPC</span>
+              <span class="tag">GDB / DBX</span>
+              <span class="tag">Linux / UNIX</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="work-card-top">
+            <h3 class="card-title">25-Year Migration &amp; RTU Ingestion</h3>
+            <span class="role-badge">Data Infrastructure</span>
+          </div>
+          <div class="flow-pill">Legacy Pascal Binary → Automated Python/Oracle ETL</div>
+          <p class="card-desc">
+            Reverse-engineered undocumented binary storage to migrate 25 years of time-series data in 2 months with zero loss, alongside automated RTU backfill pipelines.
+          </p>
+          <div class="card-footer">
+            <div class="tag-list">
+              <span class="tag">Reverse Engineering</span>
+              <span class="tag">Python ETL</span>
+              <span class="tag">Oracle OCI</span>
+              <span class="tag">RTU Protocols</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROJECTS & VISUAL SHOWCASE -->
+    <section id="projects" class="section">
+      <div class="section-header">
+        <div>
+          <p class="section-kicker">Selected Projects &amp; Research</p>
+          <h2 class="section-title">Systems, Tools &amp; Visual Previews</h2>
+        </div>
+        <p class="section-meta">Open-source · Commercial · Production UI</p>
+      </div>
+
+      <!-- Featured: etdmnet + ETDM Thesis -->
+      <article class="project-featured">
+        <div class="project-featured-body">
+          <p class="eyebrow">Open Source (Apache 2.0) &amp; M.Sc. Research</p>
+          <h3 class="section-title">etdmnet &amp; ETDM Protocol</h3>
+          <p class="card-desc">
+            Multi-module Kotlin/WebRTC P2P library (~1 KB signaling handshake, automatic EWMA host migration) translating M.Sc. research that achieves up to 67.4% faster convergence over lossy networks.
+          </p>
+          <div class="tag-list">
+            <span class="tag">Kotlin / JVM</span>
+            <span class="tag">Android</span>
+            <span class="tag">WebRTC</span>
+            <span class="tag">Ktor</span>
+            <span class="tag">Distributed Consensus</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/SqLkk/etdmnet" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">GitHub Repository ↗</a>
+            <a href="thesis.html" class="btn btn-secondary btn-sm">Thesis &amp; Benchmarks →</a>
+            <a href="https://github.com/SqLkk/etdmnet/releases" target="_blank" rel="noopener noreferrer" class="inline-link">Releases ↗</a>
+          </div>
+        </div>
+
+        <div class="window-frame">
+          <div class="window-bar">
+            <span class="window-dots" aria-hidden="true">
+              <span class="window-dot"></span>
+              <span class="window-dot"></span>
+              <span class="window-dot"></span>
+            </span>
+            <span class="window-title">etdmnet :: runtime twin-shortcut topology</span>
+          </div>
+          <div class="window-viewport">
+            <div class="diagram-canvas">
+              <svg viewBox="0 0 460 270" class="diagram-svg" role="img" aria-label="ETDM ring topology with EWMA twin shortcuts and WebRTC DataChannel flow">
+                <rect x="12" y="14" width="236" height="242" rx="8" class="svg-box" />
+                <text x="26" y="34" class="svg-label">Lossy Ring + Twin Shortcuts</text>
+
+                <!-- Ring Perimeter Edges -->
+                <polygon points="130,58 186,82 210,138 186,194 130,218 74,194 50,138 74,82" class="svg-edge" />
+
+                <!-- Twin Shortcut Links -->
+                <line x1="130" y1="58" x2="130" y2="218" class="svg-shortcut" />
+                <line x1="50" y1="138" x2="210" y2="138" class="svg-shortcut" />
+                <line x1="74" y1="82" x2="186" y2="194" class="svg-shortcut" />
+
+                <!-- Ring Nodes -->
+                <circle cx="130" cy="58" r="11" class="svg-node-twin" />
+                <circle cx="186" cy="82" r="9" class="svg-node" />
+                <circle cx="210" cy="138" r="11" class="svg-node-twin" />
+                <circle cx="186" cy="194" r="11" class="svg-node-twin" />
+                <circle cx="130" cy="218" r="11" class="svg-node-twin" />
+                <circle cx="74" cy="194" r="9" class="svg-node" />
+                <circle cx="50" cy="138" r="11" class="svg-node-twin" />
+                <circle cx="74" cy="82" r="11" class="svg-node-twin" />
+
+                <text x="126" y="62" class="svg-accent-text">u</text>
+                <text x="126" y="222" class="svg-accent-text">v</text>
+                <text x="26" y="244" class="svg-sublabel">Diameter halved: n/2 → ~n/4 hops</text>
+
+                <!-- Right Column: Runtime Stack Cards -->
+                <rect x="264" y="14" width="184" height="68" rx="8" class="svg-box-accent" />
+                <text x="278" y="37" class="svg-accent-text">WEBRTC P2P DATACHANNEL</text>
+                <text x="278" y="55" class="svg-label">~1 KB SDP/ICE Handshake</text>
+                <text x="278" y="71" class="svg-sublabel">Ktor WS Signaling + TURN</text>
+
+                <rect x="264" y="96" width="184" height="68" rx="8" class="svg-box" />
+                <text x="278" y="119" class="svg-label">EWMA Host Election</text>
+                <text x="278" y="137" class="svg-sublabel">3-Way Handshake Lock</text>
+                <text x="278" y="153" class="svg-sublabel">Zero-Relay Migration</text>
+
+                <rect x="264" y="178" width="184" height="78" rx="8" class="svg-box-green" />
+                <text x="278" y="201" class="svg-green-text">EMPIRICAL BENCHMARK</text>
+                <text x="278" y="221" class="svg-label">67.4% Faster Consensus</text>
+                <text x="278" y="239" class="svg-sublabel">N=50 Ring · 6 Problems</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2x2 Visual Showcase Grid -->
+      <div class="project-grid">
+        <!-- Nova -->
+        <article class="project-card">
+          <div class="window-frame">
+            <div class="window-bar">
+              <span class="window-dots" aria-hidden="true">
+                <span class="window-dot"></span>
+                <span class="window-dot"></span>
+                <span class="window-dot"></span>
+              </span>
+              <span class="window-title">nov4.com.tr :: industrial analytics architecture</span>
+            </div>
+            <div class="window-viewport">
+              <div class="diagram-canvas">
+                <svg viewBox="0 0 440 260" class="diagram-svg" role="img" aria-label="Nova industrial BI SaaS pipeline architecture">
+                  <rect x="16" y="22" width="118" height="216" rx="8" class="svg-box" />
+                  <text x="28" y="46" class="svg-accent-text">INGESTION</text>
+                  <rect x="28" y="64" width="94" height="36" rx="5" class="svg-box" />
+                  <text x="38" y="86" class="svg-label">OPC-UA / PLC</text>
+                  <rect x="28" y="112" width="94" height="36" rx="5" class="svg-box" />
+                  <text x="38" y="134" class="svg-label">Oracle / PG</text>
+                  <rect x="28" y="160" width="94" height="36" rx="5" class="svg-box" />
+                  <text x="38" y="182" class="svg-label">MSSQL / REST</text>
+                  <text x="28" y="220" class="svg-sublabel">Multi-Source ETL</text>
+
+                  <line x1="134" y1="130" x2="158" y2="130" class="svg-flow-green" />
+
+                  <rect x="158" y="22" width="132" height="216" rx="8" class="svg-box-accent" />
+                  <text x="170" y="46" class="svg-accent-text">CORE ENGINE</text>
+                  <rect x="170" y="64" width="108" height="48" rx="5" class="svg-box" />
+                  <text x="180" y="85" class="svg-label">OEE &amp; KPIs</text>
+                  <text x="180" y="101" class="svg-sublabel">Shift Aggregation</text>
+                  <rect x="170" y="126" width="108" height="48" rx="5" class="svg-box" />
+                  <text x="180" y="147" class="svg-label">Space Map</text>
+                  <text x="180" y="163" class="svg-sublabel">Plant Topology</text>
+                  <text x="170" y="220" class="svg-sublabel">Python + Angular</text>
+
+                  <line x1="290" y1="130" x2="314" y2="130" class="svg-flow-green" />
+
+                  <rect x="314" y="22" width="110" height="216" rx="8" class="svg-box-green" />
+                  <text x="326" y="46" class="svg-green-text">OUTPUTS</text>
+                  <rect x="326" y="64" width="86" height="48" rx="5" class="svg-box" />
+                  <text x="334" y="85" class="svg-label">Template</text>
+                  <text x="334" y="101" class="svg-sublabel">Builder UI</text>
+                  <rect x="326" y="126" width="86" height="48" rx="5" class="svg-box" />
+                  <text x="334" y="147" class="svg-label">PDF / XLSX</text>
+                  <text x="334" y="163" class="svg-sublabel">Live Exports</text>
+                  <text x="326" y="220" class="svg-sublabel">On-Prem / SaaS</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card-body">
+            <h3 class="card-title">Nova — Manufacturing &amp; Enterprise BI SaaS</h3>
+            <p class="card-desc">
+              Co-architected commercial analytics SaaS for smart-factory telemetry, interactive topology maps, and automated template-driven reporting.
+            </p>
+            <div class="tag-list">
+              <span class="tag">TypeScript</span>
+              <span class="tag">Angular</span>
+              <span class="tag">Python</span>
+              <span class="tag">REST APIs</span>
+            </div>
+            <div class="project-links">
+              <a href="https://www.nov4.com.tr" target="_blank" rel="noopener noreferrer" class="inline-link">nov4.com.tr ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Operational Analytics & Reporting UI -->
+        <article class="project-card">
+          <div class="window-frame">
+            <div class="window-bar">
+              <span class="window-dots" aria-hidden="true">
+                <span class="window-dot"></span>
+                <span class="window-dot"></span>
+                <span class="window-dot"></span>
+              </span>
+              <span class="window-title">advanced-reports :: live telemetry dashboard</span>
+            </div>
+            <button type="button"
+                    class="window-viewport window-viewport-button"
+                    data-lightbox-src="advanced_reports_im/img1.png"
+                    data-lightbox-alt="Operational Analytics Platform Dashboard"
+                    data-lightbox-caption="Operational Analytics Platform — Live Telemetry &amp; System Dashboard">
+              <img src="advanced_reports_im/img1.png" alt="Operational Analytics Platform Dashboard" class="crop-edge" loading="lazy" />
+              <span class="zoom-hint">Click to zoom</span>
+            </button>
+          </div>
+
+          <div class="project-card-body">
+            <h3 class="card-title">Grid Operational Reporting &amp; Telemetry UI</h3>
+            <p class="card-desc">
+              Power quality dashboards, interactive topology views, and scheduled PDF/Excel automation backed by real-time and Oracle time-series engines.
+            </p>
+            <div class="tag-list">
+              <span class="tag">Python</span>
+              <span class="tag">Angular</span>
+              <span class="tag">Oracle</span>
+            </div>
+            <div class="project-links">
+              <a href="advanced-reports.html" class="inline-link">Case Study &amp; Screenshots →</a>
+              <a href="https://sqlkk.github.io/advanced_reports_stage" target="_blank" rel="noopener noreferrer" class="inline-link">Live Demo ↗</a>
+            </div>
           </div>
         </article>
 
         <!-- Database Report Studio -->
-        <article class="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-xl transition hover:-translate-y-1 hover:border-sky-300/40">
-          <span class="text-xs font-semibold uppercase tracking-[0.2em] text-sky-200">Desktop tooling</span>
-          <h3 class="mt-4 text-xl font-bold text-white">Database Report Studio</h3>
-          <p class="mt-3 text-base leading-8 text-slate-300">Jasper-style desktop reporting tool for database teams. Schema exploration, query composition, and shareable PDF/Excel output. Cross-platform Electron app with Angular frontend and direct Oracle SQL connectivity.</p>
-          <div class="mt-4 flex flex-wrap gap-2">
-            <span class="rounded-full bg-sky-400/10 px-3 py-1 text-sky-200">Electron</span>
-            <span class="rounded-full bg-sky-400/10 px-3 py-1 text-sky-200">Angular</span>
-            <span class="rounded-full bg-sky-400/10 px-3 py-1 text-sky-200">Oracle SQL</span>
+        <article class="project-card">
+          <div class="window-frame">
+            <div class="window-bar">
+              <span class="window-dots" aria-hidden="true">
+                <span class="window-dot"></span>
+                <span class="window-dot"></span>
+                <span class="window-dot"></span>
+              </span>
+              <span class="window-title">database-report-studio :: query &amp; report export</span>
+            </div>
+            <button type="button"
+                    class="window-viewport window-viewport-button"
+                    data-lightbox-src="project_y_im/img2.png"
+                    data-lightbox-alt="Database Report Studio Query and Report Builder"
+                    data-lightbox-caption="Database Report Studio — SQL Query Composer &amp; Export Manager">
+              <img src="project_y_im/img2.png" alt="Database Report Studio Query and Report Builder" class="crop-edge" loading="lazy" />
+              <span class="zoom-hint">Click to zoom</span>
+            </button>
           </div>
-          <div class="mt-6 flex flex-wrap gap-5 items-center">
-            <a href="project_y.html" class="text-base font-semibold text-white hover:text-sky-200 transition">Case study →</a>
-            <a href="https://sqlkk.github.io/project_y_stage" target="_blank" rel="noopener"
-               class="rounded-full border border-sky-400/30 bg-sky-400/10 px-3 py-1 text-xs font-bold text-sky-200 hover:bg-sky-400/20 transition">Live Demo ↗</a>
+
+          <div class="project-card-body">
+            <h3 class="card-title">Database Report Studio</h3>
+            <p class="card-desc">
+              Cross-platform Electron desktop workspace for Oracle schema exploration, visual SQL composition, and multi-format HTML/XLSX/Markdown exports.
+            </p>
+            <div class="tag-list">
+              <span class="tag">Electron</span>
+              <span class="tag">Angular</span>
+              <span class="tag">Oracle SQL</span>
+            </div>
+            <div class="project-links">
+              <a href="project_y.html" class="inline-link">Case Study &amp; Screenshots →</a>
+              <a href="https://sqlkk.github.io/project_y_stage" target="_blank" rel="noopener noreferrer" class="inline-link">Live Demo ↗</a>
+            </div>
           </div>
         </article>
 
         <!-- Marketplace Operations Hub -->
-        <article class="lg:col-span-2 rounded-3xl border border-white/10 bg-white/5 p-8 shadow-xl transition hover:-translate-y-1 hover:border-emerald-300/40">
-          <span class="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-200">Marketplace operations</span>
-          <h3 class="mt-4 text-xl font-bold text-white">Marketplace Operations Hub</h3>
-          <p class="mt-3 max-w-2xl text-base leading-8 text-slate-300">Central workspace for Amazon, eBay, Walmart, and similar channels. Unified order tracking, campaign control, product management, and data sync across multiple marketplace APIs in one Angular + Ionic application.</p>
-          <div class="mt-4 flex flex-wrap gap-2">
-            <span class="rounded-full bg-emerald-400/10 px-3 py-1 text-emerald-200">Angular</span>
-            <span class="rounded-full bg-emerald-400/10 px-3 py-1 text-emerald-200">Ionic</span>
-            <span class="rounded-full bg-emerald-400/10 px-3 py-1 text-emerald-200">Marketplace APIs</span>
-          </div>
-          <div class="mt-6 flex flex-wrap gap-5 items-center">
-            <a href="project_x.html" class="text-base font-semibold text-white hover:text-emerald-200 transition">Case study →</a>
-            <a href="https://sqlkk.github.io/project_x_stage" target="_blank" rel="noopener"
-               class="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-xs font-bold text-emerald-200 hover:bg-emerald-400/20 transition">Live Demo ↗</a>
-          </div>
-        </article>
-
-        <!-- ETDM-Net (Kotlin library) -->
-        <article class="lg:col-span-2 rounded-3xl border border-fuchsia-500/25 bg-gradient-to-br from-fuchsia-500/10 via-purple-500/5 to-indigo-500/10 p-8 shadow-xl transition hover:-translate-y-1 hover:border-fuchsia-400/50">
-          <div class="flex flex-wrap items-start justify-between gap-6">
-            <div class="flex-1 min-w-0">
-              <div class="flex flex-wrap items-center gap-2">
-                <span class="inline-flex items-center rounded-full border border-fuchsia-400/30 bg-fuchsia-400/10 px-3 py-1 text-xs font-bold text-fuchsia-200">📦 Open-source library</span>
-                <span class="inline-flex items-center rounded-full border border-purple-400/30 bg-purple-400/10 px-3 py-1 text-xs font-bold text-purple-200">Thesis → Production code</span>
-                <span class="inline-flex items-center rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1 text-xs font-bold text-amber-200">v0.4.2-beta</span>
-              </div>
-              <h3 class="mt-4 text-2xl font-bold text-white">etdmnet — Relay-free P2P Multiplayer for Kotlin</h3>
-              <p class="mt-3 max-w-3xl text-sm leading-7 text-slate-300">
-                Production Kotlin library that brings the <strong class="text-fuchsia-200">ETDM protocol</strong> from my M.Sc. thesis to real apps. Direct WebRTC DataChannels (phone ↔ phone, phone ↔ PC) keep <strong class="text-white">game traffic 100% peer-to-peer</strong> — only a tiny SDP/ICE handshake (~1 KB per join) ever touches a server. Built-in automatic <strong class="text-white">host election &amp; migration</strong> using EWMA-scored health samples — kill the host and another peer takes over within a few ticks.
-              </p>
-              <div class="mt-4 flex flex-wrap gap-2">
-                <span class="rounded-full bg-fuchsia-500/15 px-3 py-1 text-fuchsia-200">Kotlin / JVM</span>
-                <span class="rounded-full bg-fuchsia-500/15 px-3 py-1 text-fuchsia-200">Android</span>
-                <span class="rounded-full bg-fuchsia-500/15 px-3 py-1 text-fuchsia-200">WebRTC</span>
-                <span class="rounded-full bg-fuchsia-500/15 px-3 py-1 text-fuchsia-200">Ktor Signaling</span>
-                <span class="rounded-full bg-fuchsia-500/15 px-3 py-1 text-fuchsia-200">coturn / TURN</span>
-                <span class="rounded-full bg-fuchsia-500/15 px-3 py-1 text-fuchsia-200">Gradle 9.x</span>
-                <span class="rounded-full bg-fuchsia-500/15 px-3 py-1 text-fuchsia-200">JitPack / Maven</span>
-              </div>
-              <div class="mt-6 flex flex-wrap gap-5 items-center">
-                <a href="https://github.com/SqLkk/etdmnet" target="_blank" rel="noopener" class="text-base font-semibold text-white hover:text-fuchsia-200 transition">View repository →</a>
-                <a href="https://github.com/SqLkk/etdmnet/releases" target="_blank" rel="noopener"
-                   class="rounded-full border border-fuchsia-400/30 bg-fuchsia-400/10 px-3 py-1 text-xs font-bold text-fuchsia-200 hover:bg-fuchsia-400/20 transition">Releases ↗</a>
-                <a href="https://github.com/users/SqLkk/packages?repo_name=etdmnet" target="_blank" rel="noopener"
-                   class="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-bold text-slate-200 hover:bg-white/10 transition">GitHub Packages ↗</a>
-                <a href="thesis.html"
-                   class="rounded-full border border-purple-400/30 bg-purple-400/10 px-3 py-1 text-xs font-bold text-purple-200 hover:bg-purple-400/20 transition">Thesis ↗</a>
-              </div>
+        <article class="project-card">
+          <div class="window-frame">
+            <div class="window-bar">
+              <span class="window-dots" aria-hidden="true">
+                <span class="window-dot"></span>
+                <span class="window-dot"></span>
+                <span class="window-dot"></span>
+              </span>
+              <span class="window-title">marketplace-hub :: omnichannel report builder</span>
             </div>
-            <div class="hidden lg:grid grid-cols-1 gap-3 shrink-0 w-60">
-              <div class="rounded-2xl border border-fuchsia-500/20 bg-fuchsia-500/10 p-4">
-                <p class="text-[10px] uppercase tracking-[0.2em] text-fuchsia-300 mb-2">Modules</p>
-                <ul class="space-y-1 text-xs text-slate-300 font-mono">
-                  <li>:core</li>
-                  <li>:signaling-ktor</li>
-                  <li>:signaling-server</li>
-                  <li>:transport-webrtc-jvm</li>
-                  <li>:transport-webrtc-android</li>
-                  <li>:turn-bundled</li>
-                </ul>
-              </div>
-              <div class="rounded-2xl border border-fuchsia-500/20 bg-fuchsia-500/10 p-4 text-center">
-                <p class="text-2xl font-bold text-fuchsia-200">9 / 9</p>
-                <p class="text-xs text-slate-400 mt-1">Core unit tests passing</p>
-              </div>
+            <button type="button"
+                    class="window-viewport window-viewport-button"
+                    data-lightbox-src="project_x_im/img2.png"
+                    data-lightbox-alt="Marketplace Operations Hub Report Builder"
+                    data-lightbox-caption="Marketplace Operations Hub — Multi-Channel Report Builder">
+              <img src="project_x_im/img2.png" alt="Marketplace Operations Hub Report Builder" class="crop-edge" loading="lazy" />
+              <span class="zoom-hint">Click to zoom</span>
+            </button>
+          </div>
+
+          <div class="project-card-body">
+            <h3 class="card-title">Marketplace Operations Hub</h3>
+            <p class="card-desc">
+              Unified multi-channel reporting, ad ROI tracking, and catalog synchronization workspace across Amazon, eBay, and Walmart APIs.
+            </p>
+            <div class="tag-list">
+              <span class="tag">Angular</span>
+              <span class="tag">Ionic</span>
+              <span class="tag">REST APIs</span>
+            </div>
+            <div class="project-links">
+              <a href="project_x.html" class="inline-link">Case Study &amp; Screenshots →</a>
+              <a href="https://sqlkk.github.io/project_x_stage" target="_blank" rel="noopener noreferrer" class="inline-link">Live Demo ↗</a>
             </div>
           </div>
         </article>
+      </div>
 
-        <!-- 17 Acar (Cezali) — Android game in closed testing -->
-        <article class="rounded-3xl border border-amber-500/25 bg-gradient-to-br from-amber-500/10 via-orange-500/5 to-red-500/10 p-8 shadow-xl transition hover:-translate-y-1 hover:border-amber-400/50">
-          <div class="flex items-center gap-4 mb-4">
-            <img src="cezali_im/logo.jpeg" alt="17 Acar app icon" class="h-16 w-16 rounded-2xl border border-amber-400/30 shadow-lg shadow-amber-500/20 object-cover" />
-            <div>
-              <span class="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200">Android game</span>
-              <h3 class="text-xl font-bold text-white mt-1">17 Acar — Cezalı Okey</h3>
-            </div>
+      <!-- Compact Full-Width Strip: 17 Acar -->
+      <article class="project-strip">
+        <div class="window-frame">
+          <button type="button"
+                  class="window-viewport window-viewport-button"
+                  data-lightbox-src="cezali_im/hero.png"
+                  data-lightbox-alt="17 Acar Multiplayer Game Art"
+                  data-lightbox-caption="17 Acar — Cross-Platform Online Multiplayer (Kotlin Multiplatform + Ktor)">
+            <img src="cezali_im/hero.png" alt="17 Acar Multiplayer Game" class="crop-watermark" loading="lazy" />
+            <span class="zoom-hint">Zoom</span>
+          </button>
+        </div>
+
+        <div class="project-card-body">
+          <div class="work-card-top">
+            <h3 class="card-title">17 Acar — Cross-Platform Online Multiplayer</h3>
+            <span class="role-badge">Google Play · Closed Testing</span>
           </div>
-          <div class="rounded-2xl overflow-hidden border border-amber-400/20 mb-4">
-            <img src="cezali_im/feature.png" alt="17 Acar feature graphic" class="w-full h-32 object-cover" />
-          </div>
-          <p class="text-base leading-8 text-slate-300">
-            A faithful mobile take on the Aegean-region <em>"17 Acar"</em> variant of Okey, built with Kotlin Multiplatform (Android, Desktop, iOS-ready) and a Ktor relay server for online play. Authentic café atmosphere, 60 FPS target, one-handed UX.
+          <p class="card-desc">
+            Real-time online multiplayer board game built with Kotlin Multiplatform, Compose Multiplatform, and a custom Ktor WebSocket relay server.
           </p>
-          <div class="mt-3 inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-400/15 px-3 py-1 text-xs font-bold text-amber-200">
-            <span class="h-1.5 w-1.5 rounded-full bg-amber-300 animate-pulse"></span>
-            Currently in Google Play <strong>Closed Testing</strong>
+          <div class="tag-list">
+            <span class="tag">Kotlin Multiplatform</span>
+            <span class="tag">Compose</span>
+            <span class="tag">Ktor Server</span>
+            <span class="tag">Android / Desktop</span>
           </div>
-          <div class="mt-4 flex flex-wrap gap-2">
-            <span class="rounded-full bg-amber-400/10 px-3 py-1 text-amber-200">Kotlin Multiplatform</span>
-            <span class="rounded-full bg-amber-400/10 px-3 py-1 text-amber-200">Compose Multiplatform</span>
-            <span class="rounded-full bg-amber-400/10 px-3 py-1 text-amber-200">Ktor Server</span>
-            <span class="rounded-full bg-amber-400/10 px-3 py-1 text-amber-200">Gradle KTS</span>
-            <span class="rounded-full bg-amber-400/10 px-3 py-1 text-amber-200">Android</span>
-          </div>
-        </article>
-
-        <!-- PDA — Personal Digital Agent (multi-agent tool) -->
-        <article class="rounded-3xl border border-teal-500/25 bg-gradient-to-br from-teal-500/10 via-cyan-500/5 to-emerald-500/10 p-8 shadow-xl transition hover:-translate-y-1 hover:border-teal-400/50">
-          <div class="flex items-center gap-3 mb-3">
-            <span class="text-xs font-semibold uppercase tracking-[0.2em] text-teal-200">Multi-agent system</span>
-            <span class="inline-flex items-center rounded-full border border-teal-400/30 bg-teal-400/15 px-2.5 py-0.5 text-[10px] font-bold text-teal-200">WIP · M1</span>
-          </div>
-          <h3 class="text-xl font-bold text-white">PDA — Personal Digital Agent</h3>
-          <p class="mt-3 text-base leading-8 text-slate-300">
-            A proactive AI <em>"orchestra conductor"</em> — not a passive chatbot. A FastAPI engine runs as a local daemon, orchestrating agents and tools via a pluggable LLM router. A Tauri menu-bar thin client talks to it over WS/HTTP. Introduces <strong class="text-teal-200">MemoryCards</strong>: semantic summaries the LLM sees instead of raw sources — proven in <code class="text-teal-200 text-xs">pda_card_holder</code>, generalised here.
-          </p>
-          <pre class="mt-4 rounded-xl border border-teal-400/20 bg-slate-950/70 p-3 text-[11px] leading-5 text-teal-100 font-mono overflow-x-auto">Thin Client (Tauri)  ⇄  Engine (FastAPI daemon)
-  • menu-bar UI         • orchestrator + agents
-  • notifications       • tool registry
-  • chat panel          • MemoryCard store
-                        • LLM router (mock/ollama/…)</pre>
-          <div class="mt-4 flex flex-wrap gap-2">
-            <span class="rounded-full bg-teal-400/10 px-3 py-1 text-teal-200">Python</span>
-            <span class="rounded-full bg-teal-400/10 px-3 py-1 text-teal-200">FastAPI</span>
-            <span class="rounded-full bg-teal-400/10 px-3 py-1 text-teal-200">Tauri</span>
-            <span class="rounded-full bg-teal-400/10 px-3 py-1 text-teal-200">Ollama</span>
-            <span class="rounded-full bg-teal-400/10 px-3 py-1 text-teal-200">WebSocket</span>
-            <span class="rounded-full bg-teal-400/10 px-3 py-1 text-teal-200">Agent Orchestration</span>
-          </div>
-        </article>
-
-      </div>
+        </div>
+      </article>
     </section>
 
-    <!-- EDUCATION -->
-
-    <section id="about" class="py-20 border-t border-white/10">
-      <p class="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300 mb-2">About</p>
-      <h2 class="text-4xl font-bold tracking-tight text-white mb-6">Background &amp; skills</h2>
-      <p class="max-w-3xl text-slate-300 leading-8 mb-10">
-        I work in the <strong class="text-white">Stargate team</strong> at Siemens Grid Software, focused on building the interface layer that connects Siemens' core SCADA platform (Spectrum 7) with external systems — from REST API integration bridges to plugin-based communication protocols. My work spans both R&amp;D and project delivery, including custom feature implementation for production utility grid clients and large-scale data engineering.<br><br>
-        Outside Siemens, I'm completing my M.Sc. at Ege University where my research formally designs and validates a distributed protocol for accelerating classical algorithms over lossy networks. I also actively practice cybersecurity and algorithm design on TryHackMe and LeetCode.
-      </p>
-      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
-          <p class="text-xs uppercase tracking-[0.2em] text-cyan-300 mb-3">Languages</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Python</span>
-            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Java</span>
-            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">C / C++</span>
-            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">TypeScript</span>
-            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">SQL</span>
-            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Bash</span>
-          </div>
-        </div>
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
-          <p class="text-xs uppercase tracking-[0.2em] text-sky-300 mb-3">Backend &amp; Integration</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">REST API</span>
-            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Angular</span>
-            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Apache Tomcat</span>
-            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">JDBC</span>
-            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Docker</span>
-            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Linux</span>
-          </div>
-        </div>
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
-          <p class="text-xs uppercase tracking-[0.2em] text-indigo-300 mb-3">Databases</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Oracle</span>
-            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">PostgreSQL</span>
-            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">MS SQL Server</span>
-            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">SQLite</span>
-            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Schema Design</span>
-            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Query Optimization</span>
-          </div>
-        </div>
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
-          <p class="text-xs uppercase tracking-[0.2em] text-violet-300 mb-3">Specialisms</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">SCADA Systems</span>
-            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Distributed Systems</span>
-            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Plugin Architecture</span>
-            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Active Directory</span>
-            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">ML / DL</span>
-            <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Cybersecurity</span>
-          </div>
+    <!-- EDUCATION & TECHNICAL STACK -->
+    <section id="background" class="section">
+      <div class="section-header">
+        <div>
+          <p class="section-kicker">Background</p>
+          <h2 class="section-title">Education &amp; Technical Stack</h2>
         </div>
       </div>
-      <div class="mt-4 rounded-2xl border border-white/10 bg-white/5 p-5">
-        <p class="text-xs uppercase tracking-[0.2em] text-slate-400 mb-3">Tools &amp; Environments</p>
-        <div class="flex flex-wrap gap-2">
-          <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Git</span>
-          <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Docker</span>
-          <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Maven / Gradle</span>
-          <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">GDB / DBX</span>
-          <span class="rounded-full bg-slate-800 border border-white/10 px-3 py-1 text-xs text-slate-200">Linux / Unix</span>
 
-    <section id="experience" class="py-20 border-t border-white/10">
-      <p class="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300 mb-2">Experience</p>
-      <h2 class="text-4xl font-bold tracking-tight text-white mb-10">Work history</h2>
-
-      <!-- Siemens -->
-      <div class="rounded-3xl border border-white/10 bg-white/5 p-8 mb-6">
-        <div class="flex flex-wrap items-start justify-between gap-4 mb-6 pb-6 border-b border-white/10">
-          <div>
-            <h3 class="text-xl font-bold text-white">Software Developer</h3>
-            <p class="text-cyan-300 font-semibold mt-1">Siemens · Grid Software / SCADA</p>
-            <p class="text-slate-400 text-sm mt-1">February 2023 – Present · Bratislava, Slovakia</p>
+      <div class="background-grid">
+        <div class="panel">
+          <p class="panel-title">Education</p>
+          <div class="edu-item">
+            <div class="edu-top">
+              <h3 class="edu-degree">M.Sc. in Computer Engineering</h3>
+              <span class="edu-years">2024 – 2026 (Expected)</span>
+            </div>
+            <p class="edu-school">Ege University, International Computer Institute</p>
+            <p class="edu-note">
+              Thesis: Enhanced Twin Discovery Model (ETDM) in Lossy Networks —
+              <a href="thesis.html" class="inline-link">View research →</a>
+            </p>
           </div>
-          <span class="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-bold text-cyan-200">Current</span>
+          <div class="edu-item">
+            <div class="edu-top">
+              <h3 class="edu-degree">B.Sc. in Electrical &amp; Electronics Engineering</h3>
+              <span class="edu-years">2017 – 2022</span>
+            </div>
+            <p class="edu-school">TOBB University of Economics and Technology</p>
+            <p class="edu-note">
+              Full-time Co-ops: Siemens Smart Grid Systems &amp; TOBB ETÜ Deep Learning Research Lab.
+            </p>
+          </div>
         </div>
-        <div class="grid gap-4 md:grid-cols-2">
-          <div class="rounded-2xl border border-sky-500/20 bg-sky-500/5 p-5">
-            <p class="text-xs uppercase tracking-[0.15em] text-sky-300 mb-2">R&amp;D · Stargate Team</p>
-            <h4 class="text-base font-bold text-white mb-3">SP7 + Gridscale xNA Integration</h4>
-            <p class="text-slate-300 text-sm leading-7">Developed mission-critical integration bridges (SCS, CalVal, TNE, Alarm interfaces) enabling data transfer between Siemens Spectrum 7 and Gridscale xNA. Engineered REST API-based communication protocols transforming SP7 into a modular, plugin-ready ecosystem for bidirectional external data exchange with full validation and data-integrity guarantees.</p>
-            <div class="mt-3 flex flex-wrap gap-1.5">
-              <span class="rounded-full bg-sky-500/15 px-2.5 py-0.5 text-xs text-sky-300">Java</span>
-              <span class="rounded-full bg-sky-500/15 px-2.5 py-0.5 text-xs text-sky-300">REST API</span>
-              <span class="rounded-full bg-sky-500/15 px-2.5 py-0.5 text-xs text-sky-300">Plugin Architecture</span>
+
+        <div class="panel">
+          <p class="panel-title">Technical Stack</p>
+          <div class="stack-rows">
+            <div class="stack-row">
+              <span class="stack-key">Languages</span>
+              <span class="stack-val">C, C++ (C++17/20), Python, Kotlin, Java, TypeScript, SQL (PL/SQL), Bash</span>
             </div>
-          </div>
-          <div class="rounded-2xl border border-violet-500/20 bg-violet-500/5 p-5">
-            <p class="text-xs uppercase tracking-[0.15em] text-violet-300 mb-2">Full-Stack Product</p>
-            <h4 class="text-base font-bold text-white mb-3">SP7 SCADA Reporting Tool</h4>
-            <p class="text-slate-300 text-sm leading-7">End-to-end reporting platform: Angular UI + Java backend on Apache Tomcat, JDBC connections to SP7 historical databases for large-scale dataset retrieval. AI-assisted telemetry imputation for missing data recovery. Active Directory authentication for enterprise-grade access control.</p>
-            <div class="mt-3 flex flex-wrap gap-1.5">
-              <span class="rounded-full bg-violet-500/15 px-2.5 py-0.5 text-xs text-violet-300">Angular</span>
-              <span class="rounded-full bg-violet-500/15 px-2.5 py-0.5 text-xs text-violet-300">Java</span>
-              <span class="rounded-full bg-violet-500/15 px-2.5 py-0.5 text-xs text-violet-300">Oracle</span>
-              <span class="rounded-full bg-violet-500/15 px-2.5 py-0.5 text-xs text-violet-300">Active Directory</span>
+            <div class="stack-row">
+              <span class="stack-key">Distributed</span>
+              <span class="stack-val">Apache Kafka, REST APIs, SSE, WebRTC, Ktor, Active/Standby HA, CloudEvents</span>
             </div>
-          </div>
-          <div class="rounded-2xl border border-orange-500/20 bg-orange-500/5 p-5">
-            <p class="text-xs uppercase tracking-[0.15em] text-orange-300 mb-2">Systems Integration</p>
-            <h4 class="text-base font-bold text-white mb-3">External Telemetry Injection &amp; Redundancy</h4>
-            <p class="text-slate-300 text-sm leading-7">Hybrid ingestion pipeline (PowerScript + Python) enabling clients to inject external telemetry into SCADA, simulating native RTU behavior. Automated redundancy mechanism continuously monitors data flow and retrieves missing values from external providers — zero data loss with rigorous validation against SCADA data models.</p>
-            <div class="mt-3 flex flex-wrap gap-1.5">
-              <span class="rounded-full bg-orange-500/15 px-2.5 py-0.5 text-xs text-orange-300">Python</span>
-              <span class="rounded-full bg-orange-500/15 px-2.5 py-0.5 text-xs text-orange-300">PowerScript</span>
-              <span class="rounded-full bg-orange-500/15 px-2.5 py-0.5 text-xs text-orange-300">HIS Database</span>
+            <div class="stack-row">
+              <span class="stack-key">Systems</span>
+              <span class="stack-val">Multithreading, Shared-Memory IPC, Distributed Consensus, State Machines, AST Sandboxing</span>
             </div>
-          </div>
-          <div class="rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-5">
-            <p class="text-xs uppercase tracking-[0.15em] text-emerald-300 mb-2">Data Engineering</p>
-            <h4 class="text-base font-bold text-white mb-3">SP4 → SP7 Legacy Data Migration</h4>
-            <p class="text-slate-300 text-sm leading-7">Fully automated migration of 20 years of historical operational data from legacy Spectrum 4 to modern SP7 within two months. Reverse-engineered Pascal code to build a custom export pipeline; built an automated import pipeline into SP7's Oracle HIS architecture. Preserved AGC production energy data with rigorous transformation logic.</p>
-            <div class="mt-3 flex flex-wrap gap-1.5">
-              <span class="rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-xs text-emerald-300">Python</span>
-              <span class="rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-xs text-emerald-300">Oracle</span>
-              <span class="rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-xs text-emerald-300">Data Pipeline</span>
+            <div class="stack-row">
+              <span class="stack-key">Databases</span>
+              <span class="stack-val">In-Memory Real-Time Kernels, Oracle (OCI, PL/SQL, Time-Series), PostgreSQL, SQL Server, SQLite</span>
+            </div>
+            <div class="stack-row">
+              <span class="stack-key">Platforms</span>
+              <span class="stack-val">Linux/UNIX (RHEL, AIX), CMake, Conan, Gradle, Docker, CI/CD, GDB, DBX, IEC 62443</span>
             </div>
           </div>
         </div>
-        <div class="mt-4 rounded-2xl border border-white/10 bg-slate-900/60 p-5">
-          <p class="text-xs uppercase tracking-[0.15em] text-slate-400 mb-3">Also at Siemens</p>
-          <ul class="space-y-3 text-sm text-slate-300">
-            <li class="flex gap-3"><span class="text-cyan-500 mt-0.5 shrink-0">▸</span><span><strong class="text-white">Advanced SCADA Reporting &amp; Monitoring Platform</strong> — Real-time platform built from scratch with COM server integration, dual-database querying (HIS + OMS), interactive network map UI, and live alarm monitoring with indirect report generation from operational events.</span></li>
-            <li class="flex gap-3"><span class="text-cyan-500 mt-0.5 shrink-0">▸</span><span><strong class="text-white">SP7 Core SCADA Enhancements &amp; Production Engineering</strong> — Custom modifications to fundamental SP7 modules: database structures, multi-site configurations, list-display. Deep debugging and root-cause analysis across distributed production components.</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Internships -->
-      <div class="grid gap-4 md:grid-cols-2">
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
-          <p class="text-xs uppercase tracking-[0.15em] text-slate-400 mb-2">Internship</p>
-          <h3 class="text-base font-bold text-white">Siemens · Smart Grid &amp; SCADA</h3>
-          <p class="text-sm text-cyan-400 mt-0.5">Energy Systems Software Team</p>
-          <p class="text-sm text-slate-400 mt-1">Sep 2021 – Dec 2021</p>
-          <p class="mt-4 text-sm text-slate-300 leading-7">Supported development and testing for smart grid monitoring and SCADA software components. System analysis, debugging, and documentation of operational workflows.</p>
-        </div>
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
-          <p class="text-xs uppercase tracking-[0.15em] text-slate-400 mb-2">Research Internship</p>
-          <h3 class="text-base font-bold text-white">TOBB ETU · Research Project</h3>
-          <p class="text-sm text-slate-400 mt-1">Jan 2021 – Apr 2021</p>
-          <p class="mt-4 text-sm text-slate-300 leading-7">Developed machine learning models for data analysis and pattern recognition. Implemented deep learning approaches, evaluated model performance on experimental datasets.</p>
-        </div>
       </div>
     </section>
-
-    <!-- PROJECTS -->
-
-    <section id="education" class="py-20 border-t border-white/10">
-      <p class="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300 mb-2">Education</p>
-      <h2 class="text-4xl font-bold tracking-tight text-white mb-10">Academic background</h2>
-      <div class="grid gap-6 md:grid-cols-2">
-        <div class="rounded-3xl border border-purple-500/20 bg-purple-500/5 p-8">
-          <p class="text-xs uppercase tracking-[0.2em] text-purple-300 mb-2">2024 – 2026</p>
-          <h3 class="text-xl font-bold text-white">M.Sc. Computer Engineering</h3>
-          <p class="text-slate-200 mt-1 font-semibold">Ege University · International Computer Institute</p>
-          <p class="text-slate-400 text-sm mt-1">İzmir, Turkey</p>
-          <p class="mt-4 text-sm text-slate-300 leading-7">Research focus: Algorithm design and modeling in imperfect network environments; distributed systems coordination. Thesis: <span class="text-purple-200 font-medium">Enhanced Twin Discovery Model (ETDM)</span>.</p>
-          <a href="thesis.html" class="mt-4 inline-flex items-center text-sm font-semibold text-purple-300 hover:text-white transition">View thesis →</a>
-        </div>
-        <div class="rounded-3xl border border-white/10 bg-white/5 p-8">
-          <p class="text-xs uppercase tracking-[0.2em] text-cyan-300 mb-2">2017 – 2022</p>
-          <h3 class="text-xl font-bold text-white">B.Sc. Electrical &amp; Electronics Engineering</h3>
-          <p class="text-slate-200 mt-1 font-semibold">TOBB University of Economics and Technology</p>
-          <p class="text-slate-400 text-sm mt-1">Ankara, Turkey</p>
-          <p class="mt-4 text-sm text-slate-300 leading-7">Foundational engineering programme covering electronics, signal processing, embedded systems, and computer science. Siemens Smart Grid &amp; SCADA internship and an ML research project during the final year.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- PLATFORMS -->
-    <section class="py-20 border-t border-white/10">
-      <p class="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300 mb-2">Platforms</p>
-      <h2 class="text-4xl font-bold tracking-tight text-white mb-4">Practice &amp; community</h2>
-      <p class="text-slate-400 text-sm mb-10 max-w-xl">Beyond daily work, I stay sharp on algorithms, cybersecurity, and programming challenges through these platforms.</p>
-      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <a href="https://github.com/ankokkk" target="_blank" rel="noopener"
-           class="rounded-3xl border border-white/10 bg-white/5 p-6 hover:border-white/30 hover:-translate-y-1 transition">
-          <svg class="h-6 w-6 text-white mb-3" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
-          <p class="font-bold text-white">GitHub</p>
-          <p class="text-slate-400 text-sm mt-1">@ankokkk</p>
-          <p class="text-xs text-slate-500 mt-2">Source code and open contributions</p>
-        </a>
-        <a href="https://tryhackme.com/p/ankok" target="_blank" rel="noopener"
-           class="rounded-3xl border border-red-500/20 bg-red-500/5 p-6 hover:border-red-400/40 hover:-translate-y-1 transition">
-          <span class="text-2xl block mb-3">🎯</span>
-          <p class="font-bold text-white">TryHackMe</p>
-          <p class="text-slate-400 text-sm mt-1">@ankok</p>
-          <p class="text-xs text-slate-500 mt-2">Cybersecurity labs &amp; learning paths</p>
-        </a>
-        <a href="https://leetcode.com/u/ankok/" target="_blank" rel="noopener"
-           class="rounded-3xl border border-yellow-500/20 bg-yellow-500/5 p-6 hover:border-yellow-400/40 hover:-translate-y-1 transition">
-          <span class="text-2xl block mb-3">⚡</span>
-          <p class="font-bold text-white">LeetCode</p>
-          <p class="text-slate-400 text-sm mt-1">@ankok</p>
-          <p class="text-xs text-slate-500 mt-2">Algorithm &amp; data structure practice</p>
-        </a>
-        <a href="https://www.hackerrank.com/profile/Ankok" target="_blank" rel="noopener"
-           class="rounded-3xl border border-emerald-500/20 bg-emerald-500/5 p-6 hover:border-emerald-400/40 hover:-translate-y-1 transition">
-          <span class="text-2xl block mb-3">✦</span>
-          <p class="font-bold text-white">HackerRank</p>
-          <p class="text-slate-400 text-sm mt-1">@Ankok</p>
-          <p class="text-xs text-slate-500 mt-2">Programming challenges &amp; certifications</p>
-        </a>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-
-    <section id="contact" class="py-20 border-t border-white/10">
-      <p class="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300 mb-2">Contact</p>
-      <h2 class="text-4xl font-bold tracking-tight text-white mb-4">Get in touch</h2>
-      <p class="text-slate-400 max-w-xl mb-10">Open to backend engineering, SCADA / industrial software, and research-adjacent roles. Feel free to reach out directly.</p>
-      <div class="grid gap-4 md:grid-cols-3">
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-6 hover:border-cyan-400/30 hover:-translate-y-0.5 transition">
-          <p class="text-xs uppercase tracking-[0.2em] text-slate-400 mb-2">Email</p>
-          <a href="mailto:utku.karaca@siemens.com" class="block text-sm font-semibold text-white hover:text-cyan-200 transition">utku.karaca@siemens.com</a>
-          <a href="mailto:utkukaraca.sql@gmail.com" class="block text-sm font-semibold text-white hover:text-cyan-200 transition mt-1">utkukaraca.sql@gmail.com</a>
-        </div>
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
-          <p class="text-xs uppercase tracking-[0.2em] text-slate-400 mb-2">Phone</p>
-          <p class="text-sm font-semibold text-white">+90 531 971 03 39</p>
-          <p class="text-xs text-slate-400 mt-1">+421 901 79 00 34 (SK)</p>
-        </div>
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
-          <p class="text-xs uppercase tracking-[0.2em] text-slate-400 mb-2">Location</p>
-          <p class="text-sm font-semibold text-white">Bratislava, Slovakia</p>
-          <p class="text-xs text-slate-400 mt-1">Also reachable in Turkey</p>
-        </div>
-      </div>
-    </section>
-
   </main>
 
-  <footer class="border-t border-white/10 py-10 text-center text-sm text-slate-500">
-    <div class="flex justify-center flex-wrap gap-6 mb-4">
-      <a href="https://github.com/ankokkk" target="_blank" rel="noopener" class="hover:text-white transition">GitHub</a>
-      <a href="https://tryhackme.com/p/ankok" target="_blank" rel="noopener" class="hover:text-white transition">TryHackMe</a>
-      <a href="https://leetcode.com/u/ankok/" target="_blank" rel="noopener" class="hover:text-white transition">LeetCode</a>
-      <a href="https://www.hackerrank.com/profile/Ankok" target="_blank" rel="noopener" class="hover:text-white transition">HackerRank</a>
-      <a href="thesis.html" class="hover:text-white transition">ETDM Thesis</a>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>Utku Karaca · Software Engineer · Bratislava, Slovakia</p>
+      <div class="footer-links">
+        <a href="uk_resume.pdf" target="_blank" rel="noopener noreferrer">Resume (PDF) ↗</a>
+        <a href="https://github.com/SqLkk" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="https://leetcode.com/u/ankok/" target="_blank" rel="noopener noreferrer">LeetCode ↗</a>
+        <a href="mailto:utkukaraca.sql@gmail.com">Send Email ↗</a>
+      </div>
     </div>
-    <p>Utku Karaca &nbsp;·&nbsp; Software Developer &nbsp;·&nbsp; Siemens Grid Software</p>
   </footer>
 
+  <dialog id="lightbox" class="lightbox" aria-labelledby="lightbox-caption">
+    <div class="lightbox-header">
+      <span id="lightbox-caption" class="lightbox-caption">Preview</span>
+      <button id="lightbox-close" type="button" class="lightbox-close">Close</button>
+    </div>
+    <div class="lightbox-body">
+      <img id="lightbox-img" class="lightbox-img" src="" alt="" />
+    </div>
+  </dialog>
+
+  <script src="assets/app.js"></script>
 </body>
 </html>
